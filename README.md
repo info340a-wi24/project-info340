@@ -7,3 +7,4 @@ This repository contains code for an interactive information web app, created fo
 <li>Ella Weinberg</li>
 <li>Oscar Shen</li>
 <li>Stephanie Lam</li>
+<li>Maisara Mackeen</li>
