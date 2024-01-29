@@ -5,5 +5,28 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: aquamarine;
-    color: darkblue;
+    color: black;
+}
+
+header{
+    background-color: rgb(84, 155, 141);
+    color: black;
+    padding: 1em;
+}
+
+section{
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+h1, h2, h3 {
+    color: rgb(88, 88, 88);
+}
+
+p{
+    margin-bottom: 25px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
