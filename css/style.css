@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Dahlia', sans-serif;
+}
+
+body {
+    background-color: #396099;
+    color: antiquewhite;
+
+
+}
+
+.createE {
+    margin-top: 80px;
+}
+
+.times {
+    display: block;
+}
+
+label {
+    display: block;
+    margin: 6px;
+} 
+
+.start, .end {
+    display: inline-block;
+    width: 40%;
+    padding: 14px;
+    padding-left:0;
+    margin: 8px 20px;
+    margin-left: 0;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#drop_zone {
+    border: 1px solid #ccc;
+    background-color: white;
+    max-width: 75%;
+    height: 250px;
+    text-align: center;
+    color: #808080;
+}
+  
+
+button[type=submit] {
+    background-color: #93CBFF;
+    color: white;
+    padding: 14px 24px;
+    margin: 14px 8px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+  
+button[type=submit]:hover {
+    background-color: #0b2545;
+}
+
+button {
+    color: black;
+    padding: 14px 24px;
+    margin: 14px 8px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    float: right;
+}
+
+.fa {
+    height: 60px;
+    color: #396099;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#dragFile {
+    line-height: 50px;
+}
+
+
+
+
+
+
+
+/* navbar style*/
+.topnav {
+    background-color: #0b2545;
+    color: beige;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: beige;
+text-align: center;
+padding: 22px 20px;
+text-decoration: none;
+font-size: 14px;
+}
+
+#title {
+    float: left;
+    margin: 16px 20px;
+    padding-left: 16px;
+    font-size: 24px;
+}
+
+.topnav a:focus {
+    color: #80b1e0;
+}
+
+
+
+
+
