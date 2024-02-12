@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+  }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  color: white;
+  background-color: #3e436f;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+nav > ul {
+  margin-left: 2rem;
+  padding: 0;
+}
+
+nav > ul > li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+header {
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 65vh;
+    flex-shrink: 0;
+
+    background-image: url(../img/big.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 2rem;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+.BigEvent {
+    margin-left: 3rem;
+    padding-top: 23rem;
+}
+
+.container {
+    position: center;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    margin-left: 2rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.event_img {
+  justify-content: center;
+  display: flex;
+}
+
+.event1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  justify-content: center;
+}
+
+.col-sm {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.date {
+  color: #b5bac1;
+  margin-bottom: 0em;
+}
+
+.card-title {
+  margin-top: 0%;
+}
+
+.btn {
+  color: white;
+  background-color: #3e436f;
+}
+
