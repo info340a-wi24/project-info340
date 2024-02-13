@@ -30,6 +30,21 @@ nav > ul > li {
   margin: 0 1rem;
 }
 
+.WebName {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 0.4rem solid #f0f0f0;
+  transition: 0.25s ease-out;
+}
+
 header {
     color: white;
     top: 0;
@@ -43,6 +58,8 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
 
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
