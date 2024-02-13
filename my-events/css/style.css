@@ -48,11 +48,12 @@ a:hover {
 
 /* main content */
 h1 {
-    font-size: 128px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 2rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 2rem;
 }
 
 h2 {
@@ -83,9 +84,9 @@ h6 {
 }
 
 .event-title {
-    margin: 1rem;
-    padding: 2rem 1rem 0 1rem;
-    font-weight: 200;
+  margin: 1rem;
+  padding: 2rem 1rem 0 1rem;
+  font-weight: 200;
 }
 
 /* cards */
