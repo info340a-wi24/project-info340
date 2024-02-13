@@ -6,6 +6,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-size: 16px;
 }
+
 /* navbar */
 nav {
   position: fixed;
@@ -138,4 +139,29 @@ h6 {
 .btn {
   color: white;
   background-color: #3e436f;
+}
+
+/* footer */
+footer {
+  color: white;
+  background-color: #3e436f;
+  margin-top: inherit;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0.05rem;
+  line-height: 1.25;
+}
+
+footer p:last-of-type {
+  /* padding-top: 8px; */
+  padding-bottom: 1rem;
 }
