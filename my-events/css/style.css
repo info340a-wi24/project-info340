@@ -6,7 +6,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-size: 16px;
 }
-
+/* navbar */
 nav {
   position: fixed;
   top: 0;
@@ -45,6 +45,7 @@ a:hover {
   transition: 0.25s ease-out;
 }
 
+/* main content */
 h1 {
     font-size: 128px;
     font-style: normal;
@@ -86,6 +87,7 @@ h6 {
     font-weight: 200;
 }
 
+/* cards */
 .event-style {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
