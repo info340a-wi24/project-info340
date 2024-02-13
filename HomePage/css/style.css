@@ -1,12 +1,38 @@
 * {
     box-sizing: border-box;
 }
-
+/* general style */
 body {
   font-family: 'Public Sans', sans-serif;
-    font-size: 16px;
-  }
+  font-size: 16px;
+}
 
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 128px;
+}
+
+h2 {
+font-size: 64px;
+}
+
+h3 {
+font-size: 32px;
+}
+
+h4 {
+font-size: 24px;
+}
+
+h5 {
+font-size: 16px;
+}
+
+h6 {
+font-size: 12px;
+}
+
+/* Nav Bar */
 nav {
   position: fixed;
   top: 0;
@@ -21,7 +47,6 @@ nav {
 }
 
 nav > ul {
-  margin-left: 2rem;
   padding: 0;
 }
 
@@ -32,6 +57,7 @@ nav > ul > li {
 
 .WebName {
   font-weight: bold;
+  margin-left: 2rem;
 }
 
 a {
@@ -45,12 +71,13 @@ a:hover {
   transition: 0.25s ease-out;
 }
 
+/* header*/
 header {
     color: white;
     top: 0;
     left: 0;
     width: 100%;
-    max-height: 65vh;
+    max-height: 64vh;
     flex-shrink: 0;
 
     background-image: url(../img/big.png);
@@ -59,43 +86,23 @@ header {
     background-repeat: no-repeat;
 }
 
-
-
-h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 128px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 2rem;
-}
-
-h2 {
-  font-size: 64px;
-}
-
-h3 {
-  font-size: 32px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-h6 {
-  font-size: 12px;
-}
-
 .BigEvent {
-    margin-left: 3rem;
-    padding-top: 23rem;
+  margin-left: 3rem;
+  padding-top: 18rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 4rem;
+  text-shadow:#3e436f;
 }
 
-.container {
+.bigEventBtn {
+  margin-left: 4rem;
+  margin-bottom: 20rem;
+}
+
+/* Main body: Events */
+.Eventlist {
     position: center;
     padding-left: 2rem;
     padding-top: 3rem;
@@ -143,3 +150,133 @@ h6 {
   background-color: #3e436f;
 }
 
+/* Ella's code*/
+/* main body */
+
+.container {
+  margin: 0 auto;
+  margin-left: 2rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.notifHeader {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-top: 7rem;
+  margin-left: 4rem;
+  margin-bottom: 0;
+}
+
+.notifHeader h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.messageAlert {
+  margin-top: 0.5em;
+}
+
+/* notification card */
+.notifCard {
+  background-color: rgb(213, 208, 208);
+  border-radius: 10px;
+  padding: .25rem;
+  margin: 1.5rem;
+  position: relative;
+  display: flex;
+  border: 1px solid rgb(240, 208, 240);
+}
+
+.clubLogo {
+  width: 2em;
+  height: 2em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-left: 0.25em;
+  border-radius: 17px;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 35%;
+  right: 1rem;
+
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+/* trash can */
+.deleteIcon img {
+width: 1em;
+height: 1em;
+margin-right: 0.25em;
+}
+
+/* the word delete under it */
+.deleteIcon p {
+  font-size: 0.6em;
+  margin: 0;
+}
+
+.notificationText {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.timeTitle {
+  display: flex;
+  align-items: baseline;
+}
+
+.notifDot {
+  height: .7em;
+  width: .7em;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  margin-left: .5rem;
+}
+
+#notifTime {
+  margin-left: 0.75rem;
+}
+
+h2, h3, h4, p, .expand {
+  margin: 0;
+}
+
+
+.expand {
+  color: rgb(82, 77, 77);
+}
+
+
+/* Footer elements */
+footer {
+  color: white;
+  background-color: #3e436f;
+  margin-top: inherit;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0.05rem;
+  line-height: 1.25;
+}
+
+footer p:last-of-type {
+  /* padding-top: 8px; */
+  padding-bottom: 1rem;
+}
