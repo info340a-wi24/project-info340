@@ -49,10 +49,6 @@ nav > ul > li {
     color: white;
 }
 
-.link:hover {
-    border-bottom: 1px solid;
-}
-
 /* main body */
 body {
     font-family: 'Public Sans', sans-serif;
@@ -67,6 +63,7 @@ body {
     margin-top: 1rem;
 }
 
+/* main part of notif */
 .notifHeader {
     text-align: left;
     margin-bottom: 0.5rem;
@@ -152,8 +149,15 @@ h2, h3, p, .expand {
     margin: 0.15rem;
 }
 
+/* show more sort of feature */
 .expand {
     color: rgb(82, 77, 77);
+}
+
+/* show less of the notif feature */
+.showLess {
+    color: rgb(82, 77, 77);
+    margin: 0.15rem;
 }
 
 
@@ -178,6 +182,5 @@ footer p {
 }
 
 footer p:last-of-type {
-    /* padding-top: 8px; */
     padding-bottom: 1rem;
 }

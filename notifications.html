@@ -5,7 +5,7 @@
     <meta name="author" content="ella, maisara, oscar, stephanie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications Page</title>
-
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.google.com/">
     <link rel="stylesheet" href="style.css">
@@ -13,11 +13,12 @@
 
 </head>
 
+<!-- head nav bar, options should link to separate page -->
 <header>
     <nav class="navbar navbar-expand-lg">
         <nav>
             <ul>
-            <li class="navbar-Name">Web name</li>
+            <li class="navbar-Name">Dawg Planner</li>
                 <li class="navItem">
                     <a class="link" href="#">Create Event</a>
                 </li>
@@ -34,6 +35,7 @@
 
 <body>
     <section>
+        <!-- Notifications header, find way to get notifications to update -->
         <div class="container">
             <div class="notifHeader">
                 <h1>Notifications</h1>
@@ -44,6 +46,7 @@
             </div>
         </div>
         
+        <!-- card 1 -->
         <div class="notifCard boxed col-md-6 col-xl-3 d-flex">
             <img class="clubLogo" src="https://www.trumba.com/i/DgAH5Vl1PrjryrUrbwh5cfxf.jpg?w=300&h=300" alt="clubPhoto">
             <div class="notificationText">
@@ -53,7 +56,7 @@
                     <div class="notifDot"></div>
                 </div>
                 <h3>Room change for meeting on 2/16</h3>
-                <p> more information about the notification that the group is sending out. <a class="expand" href="#">expand message...</a></p>
+                <p>For the meeting on 2/16 we will now meet in MGH 216. <a class="expand" href="#">expand message...</a></p>
                 <!-- is this a link?? or is it just a reaction. user clicks more, not a new page just new content -->
             </div>
             <div class="deleteIcon">
@@ -62,6 +65,7 @@
             </div>
         </div>
 
+        <!-- card 2 -->
         <div class="notifCard boxed col-md-6 col-xl-3 d-flex">
             <img class="clubLogo" src="https://ischool.uw.edu/fb-300x300.png" alt="clubPhoto">
             <div class="notificationText">
@@ -71,7 +75,9 @@
                     <div class="notifDot"></div>
                 </div>
                 <h3>Hackathon Signup Open!</h3>
-                <p> more information about the notification that the group is sending out. </p>
+                <p>We are so exited to announce our 10th annual hackathon! Spots are filling up fast so please fill out this google form to secure your spot. It will take place on May 3rd and is a 1 day event.</p>
+                <p>Googe Form: <a href="#" target="_blank">winfoHackathon.google</a></p>
+                <a class="showLess" href="#">show less...</a>
             </div>
             <div class="deleteIcon">
                 <img src="trashCan.png" alt="Delete Icon">
@@ -79,6 +85,7 @@
             </div>
         </div>
 
+        <!-- card 3 -->
         <div class="notifCard boxed col-md-6 col-xl-3 d-flex">
             <img class="clubLogo" src="https://ischool.uw.edu/fb-300x300.png" alt="clubPhoto">
             <div class="notificationText">
@@ -87,7 +94,7 @@
                     <p id="notifTime"><small>4 hrs ago</small></p>
                 </div>
                 <h3>Fundraiser on 3/12</h3>
-                <p> more information about the notification that the group is sending out. </p>
+                <p>We will be in Red Square from 12-2 tomorrow. Stop by and support! </p>
             </div>
             <div class="deleteIcon">
                 <img src="trashCan.png" alt="Delete Icon">
@@ -97,6 +104,7 @@
     </section>
 </body>
 
+<!-- footer, spaceing can be changed -->
 <footer>
     <div class="container">
       <p><a href="mailto:rso@.uw.edu"><span class="material-icons">email</span> rso.uw.edu</a></p>
