@@ -1,0 +1,183 @@
+/* top header navigation bar */
+header {
+    color: white;
+    background-color: #3e436f;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    background-size: contain;
+    font-family: 'Public Sans', sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    background-color: 3e436f;
+    padding: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  /* the title of the website */
+.navbar-Name {
+    font-size:large;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    border-bottom: 1px solid;
+} 
+  
+nav > ul {
+    margin-left: 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+  
+nav > ul > li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.navItem, .link {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    border-bottom: 1px solid;
+}
+
+/* main body */
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: white;
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    margin-left: 2rem;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.notifHeader {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.notifHeader h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.messageAlert {
+    margin-top: 0.5em;
+}
+
+/* notification card */
+.notifCard {
+    background-color: rgb(213, 208, 208);
+    border-radius: 10px;
+    padding: .25rem;
+    margin: 1.5rem;
+    position: relative;
+    display: flex;
+    border: 1px solid rgb(240, 208, 240);
+}
+
+.clubLogo {
+    width: 2em;
+    height: 2em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-left: 0.25em;
+    border-radius: 17px;
+}
+
+.deleteIcon {
+    position: absolute;
+    top: 35%;
+    right: 1rem;
+
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+/* trash can */
+.deleteIcon img {
+width: 1em;
+height: 1em;
+margin-right: 0.25em;
+}
+
+/* the word delete under it */
+.deleteIcon p {
+    font-size: 0.6em;
+    margin: 0;
+}
+
+.notificationText {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+   
+.timeTitle {
+    display: flex;
+    align-items: baseline;
+}
+
+.notifDot {
+    height: .7em;
+    width: .7em;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    margin-left: .5rem;
+}
+
+h2, h3, p, .expand {
+    margin: 0.15rem;
+}
+
+.expand {
+    color: rgb(82, 77, 77);
+}
+
+
+/* Footer elements */
+footer {
+    color: white;
+    background-color: #3e436f;
+    margin-top: inherit;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 0.05rem;
+    line-height: 1.25;
+}
+
+footer p:last-of-type {
+    /* padding-top: 8px; */
+    padding-bottom: 1rem;
+}
