@@ -4,40 +4,38 @@
         <meta charset="UTF-8"> 
         <meta name='viewport' content='width=device-width, initial-scale=1'> 
         <title>Create Events</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.cdnfonts.com/css/dahlia" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
     </head>
+
     <body>
         <header>
-            <div class="topnav">
-                <h2 id="title" >webName</h2>
-                <div id="hamburger"><a href="#"><i class="fa fa-bars" aria-label="menu" style="font-size:20px"></i></a></div>
-                <div id="pages">
-                    <a href="homePage.html">Home</a>
-                    <a href="createEvent.html">Create Events</a>
-                    <a href="#MyEvents">My Events</a>
-                    <a href="#Notification">Notification</a>
-                </div>
-            </div>
+            <nav>
+                <ul>
+                    <li class="WebName">Dawg Planner</li>
+                    <li><a href= "index.html" class="pages">Home</a></li>
+                    <li><a href= "creatEvent.html" class="pages">Create Event</a></li>
+                    <li><a href= "myEvents.html" class="pages">My events</a></li>
+                    <li><a href= "notification.html" class="pages">Notifications</a></li>
+                    <li><a href="#"><span class="fa fa-bars" id="hamburger" aria-label="menu" style="font-size:20px"></span></a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <div class="flex-container">
+            <div class="createEv-container">
                 <section>
                     <h2>sidebar</h2>
                     <div class="sidebar">
-                        <i class="fa fa-save" aria-label="save" style="font-size:30px;"></i>
-                        <!-- <i class='fas fa-angle-double-left' style='font-size:36px'></i>                     -->
+                        <i class="fa fa-save" aria-label="save-form" style="font-size:30px;"></i>                 
                     </div>          
                 </section>
 
                 <section>
                     <div class="form-container">
-                        <h2 class="createE">
+                        <h2  class="createEv">
                             Create your event!
                         </h2>
 
@@ -68,13 +66,13 @@
                                 rows="10" cols="50" placeholder="Share something about your event :))">
                             </textarea>
                             
-                            <label for="drop_zone">Upload the graphic of your event here: </label>
+                            <p>Upload the graphic of your event here: </p>
                             <div
-                                id="drop_zone"
+                                class="drop_zone"
                                 ondrop="dropHandler(event);"
                                 ondragover="dragOverHandler(event);">
-                                <p id="dragFile" >Drag your file here:</p>
-                                <i class="fa fa-cloud" aria-label="drop"></i>
+                                <p class="dragFile" >Drag your file here:</p>
+                                <span class="fa fa-cloud" aria-label="drop-file"></span>
                         </div>
                         </form>
 
@@ -84,5 +82,16 @@
                 </section>
             </div>
         </main>
+
     </body>
+
+    <footer>
+        <div class="container">
+          <p><a href="mailto:rso@.uw.edu"><span class="material-icons">email</span> rso.uw.edu</a></p>
+          <p><a href="tel:000-000-0000"><span class="material-icons">phone</span> 000-000-0000</a></p>
+          <p>&copy; University of Washington Registered Student Organizations</p>
+          <p>Created by: Ella Weinberg, Oscar Shen, Stephanie Lam, Maisara Mackeen</p>
+        </div>
+    </footer>
+
 </html>

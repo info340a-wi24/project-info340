@@ -9,11 +9,100 @@ body {
     color:black;
 }
 
-#hamburger {
+
+/* flexbox containers*/
+.createEv-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+.form-container {
+    margin-left: 12px;
+}
+
+.card-container {
+    display: flex;
+    flex-basis:100%;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+/* sidebar style */
+.sidebar {
+    background-color: #bcc2f1;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+
+}
+
+.fa-save {
+    display: block;
+    margin-top: 50px;
+    margin-left: 16px;
+    margin-right: 20px;
+}
+
+/* navbar style*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  
+    color: white;
+    background-color: #3e436f;
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+  
+nav > ul {
+    margin-left: 2rem;
+    padding: 0;
+}
+  
+nav > ul > li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.WebName {
+    font-weight: bold;
+}
+  
+a {
+    text-decoration: none;
+    color: white;
+}
+  
+a:hover {
+    color: white;
+    border-bottom: 0.4rem solid #f0f0f0;
+    transition: 0.25s ease-out;
+}
+
+/* media query default */
+.pages {
     display: none;
 }
 
-.createE {
+
+#hamburger {
+    display: inline;
+    position: fixed;
+    right: 20px;
+    color: rgb(245, 245, 238);
+    text-shadow: none;
+} 
+
+
+/* form input styling */
+.createEv {
     margin-top: 80px;
 }
 
@@ -55,7 +144,7 @@ textarea {
     box-sizing: border-box;
 }
 
-#drop_zone {
+.drop_zone {
     border: 1px solid #ccc;
     background-color: white;
     max-width: 75%;
@@ -88,113 +177,26 @@ button[type=submit]:hover {
     background-color: #a2a6ba;
 }
 
-.fa {
+.fa-cloud {
     height: 60px;
     color: #3e468e;
-    text-shadow: 2px 2px 3px #f0f0f0;
+    text-shadow: 2px 2px 3px #c9c8c8;
     margin-left: 16px;
 }
 
-#dragFile {
+.dragFile {
     margin-top: 85px;
     margin-left: 0;
 }
 
-/* navbar style*/
-.topnav {
-    background-color: #3e436f;
-    color: #3e436f;
-    color: rgb(245, 245, 238);
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-  
-  /* Style the links inside the navigation bar */
-.topnav a {
-float: left;
-color: rgb(245, 245, 238);
-text-align: center;
-padding: 22px 20px;
-text-decoration: none;
-font-size: 14px;
-}
 
-#title {
-    float: left;
-    margin: 16px 20px;
-    padding-left: 16px;
-    font-size: 24px;
-}
+/* media query */
+@media (min-width: 598px) {
+    .pages {
+        display: inline;
+    }
 
-.topnav a:focus {
-    color: #80b1e0;
-}
-
-@media (max-width: 598px) {
-
-    #pages {
+    #hamburger {
         display: none;
     }
-    #hamburger {
-        display: inline;
-        position: fixed;
-        right: 0;
-    }
-    .fa-bars {
-        color: rgb(245, 245, 238);
-        text-shadow: none;
-    }
-    
-}
-
-
-.flex-container {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex: 1;
-}
-
-.card-container {
-  display: flex;
-  flex-basis:100%;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content:center;
-}
-
-
-.sidebar {
-    background-color: #bcc2f1;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-
-}
-
-.form-container {
-    margin-left: 12px;
-}
-
-
-.fa-save {
-    display: block;
-    margin-top: 80px;
-    margin-left: 16px;
-    margin-right: 20px;
-}
-
-.fa-angle-double-left {
-    display: block;
-        height: 60px;
-
-    text-shadow: 2px 2px 3px #3e468e;
-    margin-left: 16px;
-    margin-top: 80px;
-    margin-left: 16px;
-    margin-right: 20px;
 }
