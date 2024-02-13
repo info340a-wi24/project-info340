@@ -280,3 +280,95 @@ footer p:last-of-type {
   /* padding-top: 8px; */
   padding-bottom: 1rem;
 }
+
+/* Mai's code*/
+#event-head {
+  position: relative;
+  margin: 7rem 2rem 2rem 2rem;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.event-title {
+  margin: 1rem;
+  padding: 2rem 1rem 0 1rem;
+  font-weight: 200;
+}
+
+/* cards */
+.event-style {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.event_img {
+  justify-content: center;
+  display: flex;
+}
+
+.event1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  justify-content: center;
+}
+
+.col-sm {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.date {
+  color: #b5bac1;
+  margin-bottom: 0em;
+}
+
+.card-title {
+  margin-top: 0%;
+}
+
+.card-notes {
+    color: #b5bac1;
+    margin-top: 0.5rem;
+    margin-bottom: 0em;
+    font-size: 12px;
+}
+
+.btn {
+  color: white;
+  background-color: #3e436f;
+}
+
+/* footer */
+footer {
+  color: white;
+  background-color: #3e436f;
+  margin-top: inherit;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0.05rem;
+  line-height: 1.25;
+}
+
+footer p:last-of-type {
+  /* padding-top: 8px; */
+  padding-bottom: 1rem;
+}
