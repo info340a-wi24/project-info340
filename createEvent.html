@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">  
-        <title>Cut-Out Art</title>
+        <meta charset="UTF-8"> 
+        <meta name='viewport' content='width=device-width, initial-scale=1'> 
+        <title>Create Events</title>
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.cdnfonts.com/css/dahlia" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                
+        <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <nav>
-                <div class="topnav">
-                    <h2 id="title" >webName</h2>
-                    <a href="#Home">Home</a>
-                    <a href="#Create Events">Create Events</a>
-                    <a href="#My Events">My Events</a>
+            <div class="topnav">
+                <h2 id="title" >webName</h2>
+                <div id="hamburger"><a href="#"><i class="fa fa-bars" aria-label="menu" style="font-size:20px"></i></a></div>
+                <div id="pages">
+                    <a href="homePage.html">Home</a>
+                    <a href="createEvent.html">Create Events</a>
+                    <a href="#MyEvents">My Events</a>
                     <a href="#Notification">Notification</a>
-                  </div>
-            </nav>
+                </div>
+            </div>
         </header>
         <main>
-            <div class="Create">
+            <div class="flex-container">
+                <section>
+                    <h2>sidebar</h2>
+                    <div class="sidebar">
+                        <i class="fa fa-save" style="font-size:30px;"></i>
+                        <!-- <i class='fas fa-angle-double-left' style='font-size:36px'></i>                     -->
+                    </div>          
+                </section>
 
-                <h2 class="createE">
-                    Create your event!
-                </h2>
+                <section>
+                    <div class="form-container">
+                        <h2 class="createE">
+                            Create your event!
+                        </h2>
 
-                <form role="form" method="Post" action="/Publish">
-                    <label for="title_input">Title: </label>
-                    <input type="text" id="title_input" name="title" size="20" placeholder="Put in your event name here..." >
-                    <label for="location_input">Location: </label> 
-                    <input type="text" id="location_input" name="location" placeholder="Where do you want to hold it?...">
+                        <form method="Post" action="/Publish">
 
-                    <div class = 'times'>
-                        <span div class="start">
-                            <label for="start_input">Start Time/Date: </label> 
-                            <input type="date" id="start_input" name="event_start">
-                            <input type="time" id="start_input" name="event_start">
-                        </span>
-                        <span div class="end">
-                            <label for="end_input">End Time/Date: </label> 
-                            <input type="date" id="end_input" name="event_end">
-                            <input type="time" id="end_input" name="event_end">
-                        </span>                     
-                    </div> 
-                                 
-                    <label for="description_input">Description: </label>
-                    <textarea class="description" id="description_input" name="description"  
-                        rows="10" cols="50" placeholder="Share something about your event :))"></textarea>
-                    <label for="graphic_input">Upload the graphic of your event here: </label>
-                    <div
-                        id="drop_zone"
-                        ondrop="dropHandler(event);"
-                        ondragover="dragOverHandler(event);">
-                        <p id="dragFile" >Drag your file here:</p>
-                        <i class="fa fa-cloud"></i>
+                            <label for="title_input">Title: </label>
+                            <input type="text" id="title_input" name="title" size="20" placeholder="Put in your event name here..." >
+                            
+                            <label for="location_input">Location: </label> 
+                            <input type="text" id="location_input" name="location" placeholder="Where do you want to hold it?...">
+
+                            <div class='time'>
+                                <div class="start">
+                                    <label for="sdate_input">Start Time/Date: </label> 
+                                    <input type="date" id="sdate_input" name="event_start">
+                                    <input type="time" id="stime_input" name="event_start">
+                                </div>
+
+                                <div class="end">
+                                    <label for="edate_input">End Time/Date: </label> 
+                                    <input type="date" id="edate_input" name="event_end">
+                                    <input type="time" id="etime_input" name="event_end">
+                                </div>                     
+                            </div> 
+                                        
+                            <label for="description_input">Description: </label>
+                            <textarea class="description" id="description_input" name="description"  
+                                rows="10" cols="50" placeholder="Share something about your event :))">
+                            </textarea>
+                            
+                            <label for="drop_zone">Upload the graphic of your event here: </label>
+                            <div
+                                id="drop_zone"
+                                ondrop="dropHandler(event);"
+                                ondragover="dragOverHandler(event);">
+                                <p id="dragFile" >Drag your file here:</p>
+                                <i class="fa fa-cloud"></i>
+                        </div>
+                        </form>
+
+                        <button type="submit">Publish</button>
+                        <button type="submit" id="save">Save</button>
                     </div>
-                </form>
-
-                <button type="submit">Publish</button>
-                <button type="">Save</button>
-
+                </section>
             </div>
-
         </main>
     </body>
 </html>

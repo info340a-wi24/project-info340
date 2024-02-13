@@ -1,13 +1,16 @@
 * {
     box-sizing: border-box;
-    font-family: 'Dahlia', sans-serif;
+    font-family: 'Public Sans', sans-serif;
+        margin: 0;
 }
 
 body {
-    background-color: #396099;
-    color: antiquewhite;
+    background-color: #eef1ff;
+    color:black;
+}
 
-
+#hamburger {
+    display: none;
 }
 
 .createE {
@@ -60,24 +63,10 @@ textarea {
     text-align: center;
     color: #808080;
 }
-  
 
 button[type=submit] {
-    background-color: #93CBFF;
+    background-color: #444b8b;
     color: white;
-    padding: 14px 24px;
-    margin: 14px 8px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-  
-button[type=submit]:hover {
-    background-color: #0b2545;
-}
-
-button {
-    color: black;
     padding: 14px 24px;
     margin: 14px 8px;
     border: none;
@@ -85,27 +74,37 @@ button {
     cursor: pointer;
     float: right;
 }
+  
+button[type=submit]:hover {
+    background-color: #393d63;
+}
+
+#save {
+    color: black;
+    background-color: #bcc2f1;
+}
+
+#save:hover {
+    background-color: #a2a6ba;
+}
 
 .fa {
     height: 60px;
-    color: #396099;
-    text-shadow: 2px 2px 4px #000000;
+    color: #3e468e;
+    text-shadow: 2px 2px 3px #f0f0f0;
+    margin-left: 16px;
 }
 
 #dragFile {
-    line-height: 50px;
+    margin-top: 85px;
+    margin-left: 0;
 }
-
-
-
-
-
-
 
 /* navbar style*/
 .topnav {
-    background-color: #0b2545;
-    color: beige;
+    background-color: #3e436f;
+    color: #3e436f;
+    color: rgb(245, 245, 238);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -116,7 +115,7 @@ button {
   /* Style the links inside the navigation bar */
 .topnav a {
 float: left;
-color: beige;
+color: rgb(245, 245, 238);
 text-align: center;
 padding: 22px 20px;
 text-decoration: none;
@@ -134,7 +133,68 @@ font-size: 14px;
     color: #80b1e0;
 }
 
+@media (max-width: 598px) {
+
+    #pages {
+        display: none;
+    }
+    #hamburger {
+        display: inline;
+        position: fixed;
+        right: 0;
+    }
+    .fa-bars {
+        color: rgb(245, 245, 238);
+        text-shadow: none;
+    }
+    
+}
 
 
+.flex-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.card-container {
+  display: flex;
+  flex-basis:100%;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content:center;
+}
 
 
+.sidebar {
+    background-color: #bcc2f1;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+
+}
+
+.form-container {
+    margin-left: 12px;
+}
+
+
+.fa-save {
+    display: block;
+    margin-top: 80px;
+    margin-left: 16px;
+    margin-right: 20px;
+}
+
+.fa-angle-double-left {
+    display: block;
+        height: 60px;
+
+    text-shadow: 2px 2px 3px #3e468e;
+    margin-left: 16px;
+    margin-top: 80px;
+    margin-left: 16px;
+    margin-right: 20px;
+}
