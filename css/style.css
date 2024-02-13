@@ -73,18 +73,18 @@ nav {
     left: 0;
     width: 100%;
     z-index: 1000;
-  
+
     color: white;
     background-color: #3e436f;
     padding: 2rem;
     padding-bottom: 1rem;
 }
-  
+
 nav > ul {
     margin-left: 2rem;
     padding: 0;
 }
-  
+
 nav > ul > li {
     display: inline;
     margin: 0 1rem;
@@ -93,12 +93,12 @@ nav > ul > li {
 .WebName {
     font-weight: bold;
 }
-  
+
 a {
     text-decoration: none;
     color: white;
 }
-  
+
 a:hover {
     color: white;
     border-bottom: 0.4rem solid #f0f0f0;
@@ -117,7 +117,7 @@ a:hover {
     right: 20px;
     color: rgb(245, 245, 238);
     text-shadow: none;
-} 
+}
 
 
 /* form input styling */
@@ -132,7 +132,7 @@ a:hover {
 label {
     display: block;
     margin: 6px;
-} 
+}
 
 .start, .end {
     display: inline-block;
@@ -182,7 +182,7 @@ button[type=submit] {
     cursor: pointer;
     float: right;
 }
-  
+
 button[type=submit]:hover {
     background-color: #393d63;
 }
@@ -216,6 +216,10 @@ button[type=submit]:hover {
     }
 
     #hamburger {
+        display: none;
+    }
+
+    nav > ul > li > a {
         display: none;
     }
 }

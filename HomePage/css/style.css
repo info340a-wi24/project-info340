@@ -261,8 +261,9 @@ footer {
   color: white;
   background-color: #3e436f;
   margin-top: inherit;
-  position: fixed;
+  position: relative;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -272,7 +273,7 @@ footer a {
 }
 
 footer p {
-  margin: 0.05rem;
+
   line-height: 1.25;
 }
 
@@ -348,27 +349,120 @@ footer p:last-of-type {
   background-color: #3e436f;
 }
 
-/* footer */
-footer {
-  color: white;
-  background-color: #3e436f;
-  margin-top: inherit;
+
+/*Stephanie's code*/
+/* media query default */
+.pages {
+  display: none;
+}
+
+
+#hamburger {
+  display: inline;
   position: fixed;
-  bottom: 0;
+  right: 20px;
+  color: rgb(245, 245, 238);
+  text-shadow: none;
+}
+
+
+/* form input styling */
+.createEv {
+  margin-top: 80px;
+}
+
+.times {
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 6px;
+}
+
+.start, .end {
+  display: inline-block;
+  width: 40%;
+  padding: 14px;
+  padding-left:0;
+  margin: 8px 20px;
+  margin-left: 0;
+}
+
+input[type=text] {
   width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-footer a {
+textarea {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.drop_zone {
+  border: 1px solid #ccc;
+  background-color: white;
+  max-width: 75%;
+  height: 250px;
+  text-align: center;
+  color: #808080;
+}
+
+button[type=submit] {
+  background-color: #444b8b;
   color: white;
-  text-decoration: none;
+  padding: 14px 24px;
+  margin: 14px 8px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  float: right;
 }
 
-footer p {
-  margin: 0.05rem;
-  line-height: 1.25;
+button[type=submit]:hover {
+  background-color: #393d63;
 }
 
-footer p:last-of-type {
-  /* padding-top: 8px; */
-  padding-bottom: 1rem;
+#save {
+  color: black;
+  background-color: #bcc2f1;
+}
+
+#save:hover {
+  background-color: #a2a6ba;
+}
+
+.fa-cloud {
+  height: 60px;
+  color: #3e468e;
+  text-shadow: 2px 2px 3px #c9c8c8;
+  margin-left: 16px;
+}
+
+.dragFile {
+  margin-top: 85px;
+  margin-left: 0;
+}
+
+
+/* media query */
+@media (min-width: 598px) {
+  .pages {
+      display: inline;
+  }
+
+  #hamburger {
+      display: none;
+  }
+
 }
