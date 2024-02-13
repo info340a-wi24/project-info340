@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Create Event</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.cdnfonts.com/css/dahlia" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="WebName">Dawg Planner</li>
+                    <li> <a href= "homePage.html">Home</a></li>
+                    <li><a href= "createEvent.html">Create Event</a></li>
+                    <li><a href= "myEvents.html">My events</a></li>
+                    <li><a href= "notifications.html">Notifications</a></li>
+                    <li><a href="#"><span class="fa fa-bars" id="hamburger" aria-label="menu" style="font-size:20px"></span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="createEv-container">
+                <section>
+                    <div class="sidebar">
+                        <i class="fa fa-save" aria-label="save-form" style="font-size:36px;"></i>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="form-container">
+                        <h2  class="createEv">
+                            Create your event!
+                        </h2>
+
+                        <form method="Post" action="/Publish">
+
+                            <label for="title_input">Title: </label>
+                            <input type="text" id="title_input" name="title" size="20" placeholder="Put in your event name here..." >
+
+                            <label for="location_input">Location: </label>
+                            <input type="text" id="location_input" name="location" placeholder="Where do you want to hold it?...">
+
+                            <div class='time'>
+                                <div class="start">
+                                    <label for="sdate_input">Start Time/Date: </label>
+                                    <input type="date" id="sdate_input" name="event_start">
+                                    <input type="time" id="stime_input" name="event_start">
+                                </div>
+
+                                <div class="end">
+                                    <label for="edate_input">End Time/Date: </label>
+                                    <input type="date" id="edate_input" name="event_end">
+                                    <input type="time" id="etime_input" name="event_end">
+                                </div>
+                            </div>
+
+                            <label for="description_input">Description: </label>
+                            <textarea class="description" id="description_input" name="description"
+                                rows="10" cols="50" placeholder="Share something about your event :))">
+                            </textarea>
+
+                            <p>Upload the graphic of your event here: </p>
+                            <div
+                                class="drop_zone"
+                                ondrop="dropHandler(event);"
+                                ondragover="dragOverHandler(event);">
+                                <p class="dragFile" >Drag your file here:</p>
+                                <span class="fa fa-cloud" aria-label="drop-file"></span>
+                        </div>
+                        </form>
+
+                        <button type="submit">Publish</button>
+                        <button type="submit" id="save">Save</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </body>
+
+    <footer>
+        <div class="container">
+          <p><a href="mailto:rso@.uw.edu"><span class="material-icons">email</span> rso.uw.edu</a></p>
+          <p><a href="tel:000-000-0000"><span class="material-icons">phone</span> 000-000-0000</a></p>
+          <p>&copy; University of Washington Registered Student Organizations</p>
+          <p>Created by: Ella Weinberg, Oscar Shen, Stephanie Lam, Maisara Mackeen</p>
+        </div>
+    </footer>
+
+</html>
