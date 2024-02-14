@@ -76,6 +76,14 @@ h6 {
   font-size: 12px;
 }
 
+#hamburger {
+  display: inline;
+  position: fixed;
+  right: 20px;
+  color: rgb(245, 245, 238);
+  text-shadow: none;
+}
+
 #event-head {
   position: relative;
   margin: 7rem 2rem 2rem 2rem;
