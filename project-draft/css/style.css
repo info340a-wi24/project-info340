@@ -4,24 +4,25 @@
 /* general style */
 body {
   font-family: 'Public Sans', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
+  margin: 0;
 }
 
 h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 128px;
+  font-size: 64px;
 }
 
 h2 {
-font-size: 64px;
-}
-
-h3 {
 font-size: 32px;
 }
 
-h4 {
+h3 {
 font-size: 24px;
+}
+
+h4 {
+font-size: 20px;
 }
 
 h5 {
@@ -30,6 +31,20 @@ font-size: 16px;
 
 h6 {
 font-size: 12px;
+}
+
+/* media query default */
+.pages {
+  display: none;
+}
+
+
+#hamburger {
+  display: inline;
+  position: fixed;
+  right: 20px;
+  color: rgb(245, 245, 238);
+  text-shadow: none;
 }
 
 /* Nav Bar */
@@ -51,6 +66,7 @@ nav > ul {
 }
 
 nav > ul > li {
+  font-size: 16px;
   display: inline;
   margin: 0 1rem;
 }
@@ -169,7 +185,6 @@ header {
 }
 
 .notifHeader h3 {
-  font-size: 2rem;
   margin: 0;
 }
 
@@ -260,7 +275,7 @@ h2, h3, h4, p, .expand {
 footer {
   color: white;
   background-color: #3e436f;
-  margin-top: inherit;
+  margin-top: 0;
   position: relative;
   bottom: 0;
   left: 0;
@@ -351,24 +366,50 @@ footer p:last-of-type {
 
 
 /*Stephanie's code*/
-/* media query default */
-.pages {
-  display: none;
+/* flexbox containers*/
+.createEv-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+
 }
 
+.form-container {
+  margin-left: 12px;
+}
 
-#hamburger {
-  display: inline;
-  position: fixed;
-  right: 20px;
-  color: rgb(245, 245, 238);
-  text-shadow: none;
+.card-container {
+  display: flex;
+  flex-basis:100%;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content:center;
+
+}
+
+/* sidebar style */
+.sidebar {
+  background-color: #bcc2f1;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+
+
+}
+
+.fa-save {
+  display: block;
+  margin-top: 120px;
+  margin-left: 20px;
+  margin-right: 24px;
 }
 
 
 /* form input styling */
 .createEv {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .times {
@@ -378,6 +419,7 @@ footer p:last-of-type {
 label {
   display: block;
   margin: 6px;
+  font-size: 12px;
 }
 
 .start, .end {
@@ -421,12 +463,13 @@ textarea {
 button[type=submit] {
   background-color: #444b8b;
   color: white;
-  padding: 14px 24px;
-  margin: 14px 8px;
+  font-size: 12px;
+  padding: 12px 20px;
+  margin: 12px 6px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  float: right;
+  text-align: right;
 }
 
 button[type=submit]:hover {
@@ -465,4 +508,28 @@ button[type=submit]:hover {
       display: none;
   }
 
+  h1 {
+    font-size: 128px;
+  }
+
+  h2 {
+    font-size: 64px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  button[type=submit] {
+    font-size: 16px;
+    padding: 14px 24px;
+    margin: 14px 8px;
+  }
 }
