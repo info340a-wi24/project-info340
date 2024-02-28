@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+}
+
+/* navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  color: white;
+  background-color: #3e436f;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+nav > ul {
+  margin-left: 2rem;
+  padding: 0;
+}
+
+nav > ul > li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.WebName {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 0.4rem solid #f0f0f0;
+  transition: 0.25s ease-out;
+}
+
+/* main content */
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 2rem;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+#event-head {
+  position: relative;
+  margin: 7rem 2rem 2rem 2rem;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.event-title {
+  margin: 1rem;
+  padding: 2rem 1rem 0 1rem;
+  font-weight: 200;
+}
+
+/* cards */
+.event-style {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.event_img {
+  justify-content: center;
+  display: flex;
+}
+
+.event1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  justify-content: center;
+}
+
+.col-sm {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.date {
+  color: #b5bac1;
+  margin-bottom: 0em;
+}
+
+.card-title {
+  margin-top: 0%;
+}
+
+.card-notes {
+    color: #b5bac1;
+    margin-top: 0.5rem;
+    margin-bottom: 0em;
+    font-size: 12px;
+}
+
+.btn {
+  color: white;
+  background-color: #3e436f;
+}
+
+/* footer */
+footer {
+  color: white;
+  background-color: #3e436f;
+  margin-top: inherit;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0.05rem;
+  line-height: 1.25;
+}
+
+footer p:last-of-type {
+  /* padding-top: 8px; */
+  padding-bottom: 1rem;
+}
