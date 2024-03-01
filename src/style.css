@@ -95,7 +95,7 @@ header {
     width: 100%;
     max-height: 64vh;
     flex-shrink: 0;
-
+    text-shadow: 1px 1px 3px #555555;
     background-image: url(../public/img/big.png);
     background-size: cover;
     background-position: center;
@@ -132,6 +132,13 @@ header {
   text-align: center;
 }
 
+.event_big_image {
+  position: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 .event_img {
   justify-content: center;
@@ -166,6 +173,35 @@ header {
   background-color: #3e436f;
 }
 
+.event_info {
+  padding-top:2rem;
+  padding-left: 2rem;
+  margin-left: 2rem;
+
+}
+
+.Titles {
+  color: #808080;
+}
+
+.colorTitle {
+  color: #3e436f;
+}
+
+.event_details {
+  font-weight: bold;
+}
+
+.event_description {
+  padding-top: 3rem;
+  padding-right: 2rem;
+  margin-right: 2rem;
+}
+
+.register {
+  margin-top: 1.5rem;
+}
+
 /* Ella's code*/
 /* main body */
 
@@ -192,6 +228,16 @@ header {
   margin-top: 0.5em;
 }
 
+
+/* sort by */
+.dropdown {
+  display: inline-block;
+  position: absolute;
+  right: 5rem;
+  top: 7rem;
+}
+
+
 /* notification card */
 .notifCard {
   background-color: rgb(213, 208, 208);
@@ -215,6 +261,13 @@ header {
 .deleteIcon {
   position: absolute;
   top: 35%;
+  border-radius: 50%;
+}
+
+/* dropdown */
+.deleteIcon {
+  position: absolute;
+  top: 25%;
   right: 1rem;
 
   display: flex;
@@ -222,6 +275,7 @@ header {
   cursor: pointer;
   flex-direction: column;
 }
+
 
 /* trash can */
 .deleteIcon img {
@@ -235,6 +289,26 @@ margin-right: 0.25em;
   font-size: 0.6em;
   margin: 0;
 }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+  }
+
+  .deleteIcon:hover .dropdown-content {
+    display: contents;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    background-color: rgb(240, 208, 240);
+    border-bottom: 0.5rem;
+  }
+
 
 .notificationText {
   display: flex;
