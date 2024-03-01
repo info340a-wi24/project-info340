@@ -96,7 +96,7 @@ header {
     max-height: 64vh;
     flex-shrink: 0;
 
-    background-image: url(../img/big.png);
+    background-image: url(../public/img/big.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -344,7 +344,7 @@ footer p:last-of-type {
 }
 
 .date {
-  color: #b5bac1;
+  color: #5f6265;
   margin-bottom: 0em;
 }
 
@@ -353,7 +353,7 @@ footer p:last-of-type {
 }
 
 .card-notes {
-    color: #b5bac1;
+    color: #5f6265;
     margin-top: 0.5rem;
     margin-bottom: 0em;
     font-size: 12px;
