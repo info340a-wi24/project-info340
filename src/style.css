@@ -96,7 +96,6 @@ header {
     max-height: 64vh;
     flex-shrink: 0;
     text-shadow: 1px 1px 3px #555555;
-
     background-image: url(../public/img/big.png);
     background-size: cover;
     background-position: center;
@@ -202,6 +201,7 @@ header {
 .register {
   margin-top: 1.5rem;
 }
+
 /* Ella's code*/
 /* main body */
 
@@ -228,6 +228,7 @@ header {
   margin-top: 0.5em;
 }
 
+
 /* sort by */
 .dropdown {
   display: inline-block;
@@ -235,6 +236,7 @@ header {
   right: 5rem;
   top: 7rem;
 }
+
 
 /* notification card */
 .notifCard {
@@ -253,6 +255,12 @@ header {
   padding-right: 0.5em;
   padding-top: 0.25em;
   padding-left: 0.25em;
+  border-radius: 17px;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 35%;
   border-radius: 50%;
 }
 
@@ -266,6 +274,20 @@ header {
   align-items: flex-end;
   cursor: pointer;
   flex-direction: column;
+}
+
+
+/* trash can */
+.deleteIcon img {
+width: 1em;
+height: 1em;
+margin-right: 0.25em;
+}
+
+/* the word delete under it */
+.deleteIcon p {
+  font-size: 0.6em;
+  margin: 0;
 }
 
   .dropdown-content {
@@ -286,6 +308,7 @@ header {
     background-color: rgb(240, 208, 240);
     border-bottom: 0.5rem;
   }
+
 
 .notificationText {
   display: flex;
@@ -395,7 +418,7 @@ footer p:last-of-type {
 }
 
 .date {
-  color: #b5bac1;
+  color: #5f6265;
   margin-bottom: 0em;
 }
 
@@ -404,7 +427,7 @@ footer p:last-of-type {
 }
 
 .card-notes {
-    color: #b5bac1;
+    color: #5f6265;
     margin-top: 0.5rem;
     margin-bottom: 0em;
     font-size: 12px;
