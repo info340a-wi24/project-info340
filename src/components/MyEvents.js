@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardGrid } from './Card.js';
 
-export function MyEvents(props) {
+export default function MyEvents(props) {
     // Pretend we passed a prop
     const uData = [{title: "Timeless Taiwan", location: "HUB 224", date: "02/10/2024",description: "Join us for our annual event and explore Taiwan cuisines!", image: "img/big.png", alt: "Students attending event the previous year", hashtags: "#tosa #timelesstaiwan #nightmarket"}, 
                         {title: "iSchool Career Fair 2024", location: "HUB Ballroom", date: "02/14/2024", description: "Engage for opportunities to connect with employers from various industries!", image: "img/careerfair2.jpg", alt: "Students attending event the previous year", hashtags: "#job #internship #informatics #careerfair"},

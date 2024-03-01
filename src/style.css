@@ -376,6 +376,8 @@ footer p:last-of-type {
   position: relative;
   margin: 7rem 2rem 2rem 2rem;
   font-weight: bolder;
+  background-color: #3e436f;
+  background-image: none;
   margin-bottom: 0;
 }
 
@@ -389,6 +391,13 @@ footer p:last-of-type {
 .event-style {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+
+.card {
+    display: flex;
+    border-radius: 10px;
+    border:1px light #808080;
+    box-shadow: inset;
 }
 
 .card-body {
@@ -405,7 +414,9 @@ footer p:last-of-type {
 
 .event1 {
   max-width: 100%;
-  height: auto;
+  height: 200px;
+  width:250px;
+  justify-content: center;
 }
 
 .row {
@@ -424,6 +435,8 @@ footer p:last-of-type {
 
 .card-title {
   margin-top: 0%;
+  margin-inline: 1;
+  font-weight: bold;
 }
 
 .card-notes {
@@ -436,6 +449,7 @@ footer p:last-of-type {
 .btn {
   color: white;
   background-color: #3e436f;
+  size: large;
 }
 
 
