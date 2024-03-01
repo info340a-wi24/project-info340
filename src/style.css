@@ -96,7 +96,7 @@ header {
     max-height: 64vh;
     flex-shrink: 0;
 
-    background-image: url(../img/big.png);
+    background-image: url(../public/img/big.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -192,6 +192,14 @@ header {
   margin-top: 0.5em;
 }
 
+/* sort by */
+.dropdown {
+  display: inline-block;
+  position: absolute;
+  right: 5rem;
+  top: 7rem;
+}
+
 /* notification card */
 .notifCard {
   background-color: rgb(213, 208, 208);
@@ -209,12 +217,13 @@ header {
   padding-right: 0.5em;
   padding-top: 0.25em;
   padding-left: 0.25em;
-  border-radius: 17px;
+  border-radius: 50%;
 }
 
+/* dropdown */
 .deleteIcon {
   position: absolute;
-  top: 35%;
+  top: 25%;
   right: 1rem;
 
   display: flex;
@@ -223,18 +232,24 @@ header {
   flex-direction: column;
 }
 
-/* trash can */
-.deleteIcon img {
-width: 1em;
-height: 1em;
-margin-right: 0.25em;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+  }
 
-/* the word delete under it */
-.deleteIcon p {
-  font-size: 0.6em;
-  margin: 0;
-}
+  .deleteIcon:hover .dropdown-content {
+    display: contents;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    background-color: rgb(240, 208, 240);
+    border-bottom: 0.5rem;
+  }
 
 .notificationText {
   display: flex;
@@ -280,6 +295,9 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 10vh;
 }
 
 footer a {

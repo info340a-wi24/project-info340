@@ -33,11 +33,22 @@
                 <h3>Notifications</h3>
                     <div class="messageAlert">
                     <p>2 New Messages</p>
+                    <!-- a sort by??? -->
+                    <!-- My dropdown menus are inspired by: https://blog.hubspot.com/website/html-dropdown -->
+                    <div class="dropdown">
+                        <label for="drop-options">Sort By:</label>
+                        <select name="drop-options" id="drop-options">
+                            <option value="all">All (default)</option>
+                            <option value="unread">Unread</option>
+                            <option value="read">Read</option>
+                        </select>
+                    </div>
+
                 </div>
             </div>
 
 
-        <div class="container">
+        <div class="container" id="notificationsContainer">
             <div class="notifCard boxed col-md-6 col-xl-3 d-flex">
                 <img class="clubLogo" src="https://www.trumba.com/i/DgAH5Vl1PrjryrUrbwh5cfxf.jpg?w=300&h=300" alt="clubPhoto">
                 <div class="notificationText">
@@ -47,12 +58,15 @@
                         <div class="notifDot"></div>
                     </div>
                     <h4>Room change for meeting on 2/16</h4>
-                    <p>more information about the notification that the group is sending out.<a class="expand" href="#">expand message...</a></p>
-                    <!-- is this a link?? or is it just a reaction. user clicks more, not a new page just new content -->
+                    <p>more information about the notification that the group is sending out.</p>
+                    <p><a class="expand" href="#"> expand message...</a></p>
                 </div>
                 <div class="deleteIcon">
-                    <img src="img/trashCan.png" alt="Delete Icon">
-                    <p>Delete</p>
+                    <button>...</button>
+                    <div class="dropdown-content">
+                        <a href="#">Mark as Read</a>
+                        <a href="#">Delete</a>
+                </div>
                 </div>
             </div>
 
@@ -66,10 +80,16 @@
                     </div>
                     <h4>Hackathon Signup Open!</h4>
                     <p>more information about the notification that the group is sending out.</p>
+                    <p><a class="expand" href="#"> expand message...</a></p>
                 </div>
+                <!-- delete dropdown -->
+                <!-- Inspired by: https://blog.hubspot.com/website/html-dropdown -->
                 <div class="deleteIcon">
-                    <img src="img/trashCan.png" alt="Delete Icon">
-                    <p>Delete</p>
+                    <button>...</button>
+                    <div class="dropdown-content">
+                        <a href="#">Mark as Read</a>
+                        <a href="#">Delete</a>
+                </div>
                 </div>
             </div>
 
@@ -82,10 +102,14 @@
                     </div>
                     <h4>Fundraiser on 3/12</h4>
                     <p>more information about the notification that the group is sending out.</p>
+                    <p><a class="expand" href="#"> expand message...</a></p>
                 </div>
                 <div class="deleteIcon">
-                    <img src="img/trashCan.png" alt="Delete Icon">
-                    <p>Delete</p>
+                    <button>...</button>
+                    <div class="dropdown-content">
+                        <a href="#">Mark as Read</a>
+                        <a href="#">Delete</a>
+                </div>
                 </div>
             </div>
         </div>
