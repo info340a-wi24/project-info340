@@ -23,7 +23,7 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
   };
 
   return (
-    <div className={`notifCard boxed col-md-6 col-xl-3 d-flex ${isRead ? 'read' : ''}`}>
+    <div className={`notifCard ${isRead ? 'read' : ''}`}>
       <img className="clubLogo" src={clubLogo} alt="clubPhoto" />
       <div className="notificationText">
         <div className="timeTitle">
