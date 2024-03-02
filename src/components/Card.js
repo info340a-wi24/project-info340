@@ -4,7 +4,7 @@ import {useNavigate } from 'react-router-dom';
 
 // Code heavily inspired by Problem Set 8 'PetList.js'
 export function CardGrid(props) {
-  const info = props.data || []; 
+  const info = props.data || [];
 
   /* const eventCards = info.slice(4).map((eventInfo, i) => {
     return <CardEvent key={i} data={info[i]} />;
@@ -16,7 +16,7 @@ export function CardGrid(props) {
     eventCards.push(<CardEvent key={i} data={info[i]}/>);
   }
 
-  
+
   return (
       <div className="event-style">
         <div className="container row" style={{display: 'flex'}}>
@@ -54,5 +54,5 @@ function CardEvent(props) {
           </div>
       </div>
     </div>
-    );    
+    );
 }
