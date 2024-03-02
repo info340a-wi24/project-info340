@@ -1,0 +1,612 @@
+* {
+    box-sizing: border-box;
+}
+/* general style */
+body {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 64px;
+}
+
+h2 {
+font-size: 32px;
+}
+
+h3 {
+font-size: 24px;
+}
+
+h4 {
+font-size: 20px;
+}
+
+h5 {
+font-size: 16px;
+}
+
+h6 {
+font-size: 12px;
+}
+
+/* media query default */
+.pages {
+  display: none;
+}
+
+
+#hamburger {
+  display: inline;
+  position: fixed;
+  right: 20px;
+  color: rgb(245, 245, 238);
+  text-shadow: none;
+}
+
+/* Nav Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  color: white;
+  background-color: #3e436f;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+nav > ul {
+  padding: 0;
+}
+
+nav > ul > li {
+  font-size: 16px;
+  display: inline;
+  margin: 0 1rem;
+}
+
+.WebName {
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 0.4rem solid #f0f0f0;
+  transition: 0.25s ease-out;
+}
+
+/* header*/
+header {
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 64vh;
+    flex-shrink: 0;
+    text-shadow: 1px 1px 3px #555555;
+    background-image: url(../public/img/big.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.BigEvent, .bigEventBtn {
+  position: absolute;
+  margin-left: 3rem;
+}
+
+.BigEvent {
+  padding-top: 17rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 4rem;
+  text-shadow:#3e436f;
+}
+
+.bigEventBtn {
+  bottom: 15px;
+  left: 1rem;
+}
+
+
+
+/* Main body: Events */
+.Eventlist {
+    position: center;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    margin-left: 2rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.event_big_image {
+  position: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.event_img {
+  justify-content: center;
+  display: flex;
+}
+
+.event1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  justify-content: center;
+}
+
+.col-sm {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.date {
+  color: #b5bac1;
+  margin-bottom: 0em;
+}
+
+.card-title {
+  margin-top: 0%;
+}
+
+.btn {
+  color: white;
+  background-color: #3e436f;
+}
+
+.event_info {
+  padding-top:2rem;
+  padding-left: 2rem;
+  margin-left: 2rem;
+
+}
+
+.Titles {
+  color: #808080;
+}
+
+.colorTitle {
+  color: #3e436f;
+}
+
+.event_details {
+  font-weight: bold;
+}
+
+.event_description {
+  padding-top: 3rem;
+  padding-right: 2rem;
+  margin-right: 2rem;
+}
+
+.register {
+  margin-top: 1.5rem;
+}
+
+/* Ella's code*/
+/* main body */
+
+.container {
+  margin: 0 auto;
+  margin-left: 1rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.notifHeader {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-top: 7rem;
+  margin-left: 2rem;
+  margin-bottom: 0;
+}
+
+.notifHeader h3 {
+  margin: 0;
+}
+
+.messageAlert {
+  margin-top: 0.5em;
+}
+
+
+/* sort by */
+.dropdown {
+  display: inline-block;
+  position: absolute;
+  right: 5rem;
+  top: 7rem;
+}
+
+
+/* notification card */
+.notifCard {
+  background-color: rgb(213, 208, 208);
+  border-radius: 10px;
+  display: flex;
+  padding: .25rem;
+  margin: 2rem;
+  position: relative;
+  border: 1px solid rgb(240, 208, 240);
+}
+
+.clubLogo {
+  width: 2em;
+  height: 2em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-left: 0.25em;
+  border-radius: 50%;
+}
+
+
+/* dropdown */
+.deleteIcon {
+  position: absolute;
+  top: 25%;
+  right: 1rem;
+
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.deleteIcon:hover .dropdown-content {
+  display: contents;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(240, 208, 240);
+  border-bottom: 0.5rem;
+}
+
+.notificationText {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.timeTitle {
+  display: flex;
+  align-items: baseline;
+}
+
+.notifDot {
+  height: .7em;
+  width: .7em;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  margin-left: .5rem;
+}
+
+#notifTime {
+  margin-left: 0.75rem;
+}
+
+h2, h3, h4, p, .expand {
+  margin: 0;
+}
+
+
+.expand {
+  color: rgb(82, 77, 77);
+}
+
+
+/* Footer elements */
+footer {
+  color: white;
+  background-color: #3e436f;
+  margin-top: 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+
+  line-height: 1.25;
+}
+
+footer p:last-of-type {
+  /* padding-top: 8px; */
+  padding-bottom: 1rem;
+}
+
+/* Mai's code*/
+#event-head {
+  position: relative;
+  margin: 7rem 2rem 2rem 2rem;
+  font-weight: bolder;
+  background-color: #3e436f;
+  background-image: none;
+  margin-bottom: 0;
+}
+
+.event-title {
+  margin: 1rem;
+  padding: 2rem 1rem 0 1rem;
+  font-weight: 200;
+}
+
+/* cards */
+.event-style {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.card {
+    display: flex;
+    border-radius: 10px;
+    border:1px light #808080;
+    box-shadow: inset;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.event_img {
+  justify-content: center;
+  display: flex;
+}
+
+.event1 {
+  max-width: 100%;
+  height: 200px;
+  width:250px;
+  justify-content: center;
+}
+
+.row {
+  justify-content: center;
+}
+
+.col-sm {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.date {
+  color: #5f6265;
+  margin-bottom: 0em;
+}
+
+.card-title {
+  margin-top: 0%;
+  margin-inline: 1;
+  font-weight: bold;
+}
+
+.card-notes {
+    color: #5f6265;
+    margin-top: 0.5rem;
+    margin-bottom: 0em;
+    font-size: 12px;
+}
+
+.btn {
+  color: white;
+  background-color: #3e436f;
+  size: large;
+}
+
+
+/*Stephanie's code*/
+/* flexbox containers*/
+.createEv-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+
+}
+
+.form-container {
+  margin-left: 12px;
+}
+
+.card-container {
+  display: flex;
+  flex-basis:100%;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content:center;
+
+}
+
+/* sidebar style */
+.sidebar {
+  background-color: #bcc2f1;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+
+
+}
+
+.fa-save {
+  display: block;
+  margin-top: 120px;
+  margin-left: 20px;
+  margin-right: 24px;
+}
+
+
+/* form input styling */
+.createEv {
+  margin-top: 100px;
+}
+
+.times {
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 6px;
+  font-size: 12px;
+}
+
+.start, .end {
+  display: inline-block;
+  width: 40%;
+  padding: 14px;
+  padding-left:0;
+  margin: 8px 20px;
+  margin-left: 0;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.drop_zone {
+  border: 1px solid #ccc;
+  background-color: white;
+  max-width: 75%;
+  height: 250px;
+  text-align: center;
+  color: #808080;
+}
+
+button[type=submit] {
+  background-color: #444b8b;
+  color: white;
+  font-size: 12px;
+  padding: 12px 20px;
+  margin: 12px 6px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: right;
+}
+
+button[type=submit]:hover {
+  background-color: #393d63;
+}
+
+#save {
+  color: black;
+  background-color: #bcc2f1;
+}
+
+#save:hover {
+  background-color: #a2a6ba;
+}
+
+.fa-cloud {
+  height: 60px;
+  color: #3e468e;
+  text-shadow: 2px 2px 3px #c9c8c8;
+  margin-left: 16px;
+}
+
+.dragFile {
+  margin-top: 85px;
+  margin-left: 0;
+}
+
+
+/* media query */
+@media (min-width: 598px) {
+  .pages {
+      display: inline;
+  }
+
+  #hamburger {
+      display: none;
+  }
+
+  h1 {
+    font-size: 128px;
+  }
+
+  h2 {
+    font-size: 64px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  button[type=submit] {
+    font-size: 16px;
+    padding: 14px 24px;
+    margin: 14px 8px;
+  }
+}
