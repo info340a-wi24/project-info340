@@ -34,17 +34,17 @@ export default function Form (props) {
     // onFileUpload = () => {
     //     // Create an object of formData
     //     const formData = new FormData();
- 
+
     //     // Update the formData object
     //     formData.append(
     //         "myFile",
     //         this.state.selectedFile,
     //         this.state.selectedFile.name
     //     );
- 
+
     //     // Details of the uploaded file
     //     console.log(this.state.selectedFile);
- 
+
     //     // // Request made to the backend api
     //     // // Send formData object
     //     // axios.post("api/uploadfile", formData);
@@ -82,32 +82,32 @@ export default function Form (props) {
                         <form method="Post" action="/Publish" onSubmit={handleSubmit}>
 
                             <label for="title_input">
-                                Title: 
-                                <input type="text" 
-                                id="title_input" 
-                                name="title" size="20" 
-                                placeholder="Put in your event name here..." 
+                                Title:
+                                <input type="text"
+                                id="title_input"
+                                name="title" size="20"
+                                placeholder="Put in your event name here..."
                                 onChange={(e) => setTitle(e.target.value)}
                                 />
                             </label>
-                            
+
 
                             <label for="location_input">
-                                Location: 
-                                <input type="text" 
-                                id="location_input" 
-                                name="location" 
-                                placeholder="Where do you want to hold it?..." 
+                                Location:
+                                <input type="text"
+                                id="location_input"
+                                name="location"
+                                placeholder="Where do you want to hold it?..."
                                 onChange={(e) => setLocation(e.target.value)}
                                 />
                             </label>
-                            
+
 
                             <div class="time">
-                                
+
                                 <div className='start'>
                                     <label for="Start_time">
-                                        Start time:    
+                                        Start time:
                                     <DatePicker
                                         selected={startTime}
                                         onChange={startHandler}
@@ -118,11 +118,11 @@ export default function Form (props) {
                                     />
                                     </label>
                                 </div>
-                                
+
 
                                 <div className='end'>
                                     <label for="Start_time">
-                                        End time: 
+                                        End time:
                                     <DatePicker
                                     selected={endTime}
                                     onChange={endHandler}
@@ -131,19 +131,19 @@ export default function Form (props) {
                                     timeInterval={15}
                                     timeFormat='HH:mm'
 
-                                    />   
-                                    </label> 
+                                    />
+                                    </label>
                                 </div>
                             </div>
 
                             <label for="description_input">
-                                Description: 
+                                Description:
                                 <textarea class="description" id="description_input" name="description"
-                                rows="10" cols="50" placeholder="Share something about your event :))" 
+                                rows="10" cols="50" placeholder="Share something about your event :))"
                                 onChange={(e) => setDescription(e.target.value)}
                                 />
                             </label>
-                            
+
 
                             <p>Upload the graphic of your event here: </p>
                             <input type="file" onChange={dropHandler} />
