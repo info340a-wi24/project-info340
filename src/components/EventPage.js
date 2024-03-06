@@ -7,7 +7,7 @@ export default function EventPage() {
     <div>
       <Nav />
       <header style={{ backgroundImage: `./img/big.png`, height: '450px' }}>
-          <h1 className="BigEvent">Timeless Taiwan</h1>
+          <h1 className="BigEvent EventTitle">Timeless Taiwan</h1>
       </header>
 
       <main>

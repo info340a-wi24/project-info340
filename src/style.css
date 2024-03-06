@@ -103,17 +103,17 @@ header {
     position: relative;
 }
 
-.BigEvent, .bigEventBtn {
+/* .BigEvent, .bigEventBtn {
   position: absolute;
   margin-left: 3rem;
-}
+} */
 
 .BigEvent {
-  padding-top: 17rem;
+  /* padding-top: 17rem; */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 4rem;
+  /* margin-left: 4rem; */
   text-shadow:#3e436f;
 }
 
@@ -122,7 +122,16 @@ header {
   left: 1rem;
 }
 
+.EventTitle {
+  padding-top: 17rem;
+  margin-left: 4rem;
+}
 
+.titleWBtn {
+  position: absolute;
+  padding-top: 15rem;
+  padding-left: 4rem;
+}
 
 /* Main body: Events */
 .Eventlist {
