@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div>
-      <header style={{ backgroundImage: `url(${url})`, height: '550px' }}>
+      <header style={{ backgroundImage: `url(${url})`, height: '700px' }}>
           <h1 className="BigEvent">{text}</h1>
           <div>
             <button className="btn bigEventBtn" onClick={ () => navigateTo("/EventPage")}> Go to event </button>

@@ -11,13 +11,14 @@ import Notifications from './Notifications';
 export default function App(props) {
   return (
     <div>
-        <Nav />
-        <Routes>
+      <Nav />
+      <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/CreateEvent" element={<Form />} />
           <Route path="/MyEvent" element={<MyEvents />} />
           <Route path="/Notifications" element={<Notifications />} />
           <Route path="/EventPage" element={<EventPage />} />
+          <Route path='/' element={<Home />} />
       </Routes>
       <Footer />
     </div>
