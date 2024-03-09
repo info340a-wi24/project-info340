@@ -100,21 +100,37 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
 
-.BigEvent {
+/* .BigEvent, .bigEventBtn {
+  position: absolute;
   margin-left: 3rem;
-  padding-top: 18rem;
+} */
+
+.BigEvent {
+  /* padding-top: 17rem; */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 4rem;
+  /* margin-left: 4rem; */
   text-shadow:#3e436f;
 }
 
 .bigEventBtn {
+  bottom: 15px;
+  left: 1rem;
+}
+
+.EventTitle {
+  padding-top: 17rem;
   margin-left: 4rem;
-  margin-bottom: 20rem;
+}
+
+.titleWBtn {
+  position: absolute;
+  padding-top: 15rem;
+  padding-left: 4rem;
 }
 
 /* Main body: Events */
@@ -258,9 +274,6 @@ header {
   border-radius: 50%;
 }
 
-#notificationsContainer {
-
-}
 
 /* dropdown */
 .deleteIcon {
