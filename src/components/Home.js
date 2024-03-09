@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {useNavigate } from 'react-router-dom';
-import Nav from './Nav'
 import { CardGrid } from './Card';
 
 
@@ -13,7 +12,6 @@ const imageTextPair = [
 
 
 export default function Home() {
-
   // Image changing function
   const [currentIndex, setCurrentIndex] = useState(0);
 
