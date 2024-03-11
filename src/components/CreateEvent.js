@@ -66,7 +66,7 @@ export default function Form (props) {
     return (
         <div>
             <main>
-            <div class="createEv-container">
+            <div className="createEv-container">
                 {/* <section>
                     <div class="sidebar">
                         <i class="fa fa-save" aria-label="save-form" style="font-size:36px;"></i>
@@ -74,8 +74,8 @@ export default function Form (props) {
                 </section> */}
 
                 <section>
-                    <div class="form-container">
-                        <h2  class="createEv">
+                    <div className="form-container">
+                        <h2  className="createEv">
                             Create your event!
                         </h2>
 
@@ -103,7 +103,7 @@ export default function Form (props) {
                             </label>
 
 
-                            <div class="time">
+                            <div className="time">
 
                                 <div className='start'>
                                     <label for="Start_time">
@@ -138,7 +138,7 @@ export default function Form (props) {
 
                             <label for="description_input">
                                 Description:
-                                <textarea class="description" id="description_input" name="description"
+                                <textarea className="description" id="description_input" name="description"
                                 rows="10" cols="50" placeholder="Share something about your event :))"
                                 onChange={(e) => setDescription(e.target.value)}
                                 />

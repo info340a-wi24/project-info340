@@ -80,9 +80,10 @@ function CardEvent(props) {
     const newLink = info.image.slice(5);
 
     const navigate = useNavigate();
-    function navigateTo(info) {
-    navigate(info);
-  }
+
+    function navigateToEventPage() {
+      navigate('/EventPage', { state: { ...info } });
+    }
 
     return (
     <div className="col-md-6 col-xl-3 ">
@@ -94,10 +95,12 @@ function CardEvent(props) {
                 </div>
 
                 <div className="col-sm">
+
                     <CardSubtitle className="date">{formattedDate}</CardSubtitle>
                     <CardTitle className="card-title">{info.title}</CardTitle>
                     <CardText className="card-text">{info.description}</CardText>
-                    <button className="btn btn-dark" onClick={ () => navigateTo("/EventPage")}>Go to event</button>
+                    <button className="btn btn-dark" onClick={ () => navigateToEventPage(info)}>Go to event</button>
+
                 </div>
             </div>
         </CardBody>

@@ -281,6 +281,7 @@ header {
   top: 25%;
   right: 1rem;
 
+  
   display: flex;
   align-items: flex-end;
   cursor: pointer;
@@ -455,10 +456,9 @@ footer p:last-of-type {
 /* flexbox containers*/
 .createEv-container {
   display: flex;
-  height: 100%;
+  height: 1000;
   width: 100%;
   flex: 1;
-
 }
 
 .form-container {
