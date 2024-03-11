@@ -1,11 +1,10 @@
 import React from 'react';
-import Nav from './Nav';
 
 
-export default function EventPage(props) {
-const {title, location, description, image, date} = props;
+export default function(props) {
 
-  return(
+
+  return (
     <div>
       <header style={{ backgroundImage: `url(${image})`, height: '450px' }}>
           <h1 className="BigEvent EventTitle">{title}</h1>
@@ -19,8 +18,8 @@ const {title, location, description, image, date} = props;
         </div>
         <h4><div className="event_description">{description}</div></h4>
         <a href="#" className="btn btn-dark register">Register</a>
-        </div>
-      </main>
+      </div>
+    </main>
     </div>
   );
 }
