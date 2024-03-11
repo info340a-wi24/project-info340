@@ -456,7 +456,7 @@ footer p:last-of-type {
 /* flexbox containers*/
 .createEv-container {
   display: flex;
-  height: 1000;
+  height: 1100;
   width: 100%;
   flex: 1;
 }
