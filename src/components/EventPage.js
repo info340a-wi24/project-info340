@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Nav from './Nav';
 
 
 export default function EventPage(props) {
-const {title, location, description, image, date} = props;
+  const location = useLocation();
+  const {title, eventLocation, description, image, date} = location.state;
 
   return(
     <div>
@@ -15,7 +17,7 @@ const {title, location, description, image, date} = props;
       <div className="event_info">
         <div className="Titles">
           <h5><div className="event_details"><strong className="colorTitle">Time: </strong> {date}</div></h5>
-          <h5><div className="event_details"><strong className="colorTitle">Location: </strong>{location}</div></h5>
+          <h5><div className="event_details"><strong className="colorTitle">Location: </strong>{eventLocation}</div></h5>
         </div>
         <h4><div className="event_description">{description}</div></h4>
         <a href="#" className="btn btn-dark register">Register</a>

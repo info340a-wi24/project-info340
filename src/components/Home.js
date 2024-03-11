@@ -5,9 +5,9 @@ import { CardGrid } from './Card';
 
 
 const imageTextPair = [
-  {url: '/img/big.png', text: "Timeless Taiwan"},
-  {url: '/img/Hotpot.png', text: "Hotpot Together"},
-  {url: '/img/Lantern.JPG', text: "Lantern Night"}
+  {title: "Timeless Taiwan", eventLocation: "HUB 224", date: "Sat Feb 10 2024 14:30:00 GMT-0800 (Pacific Standard Time)",description: "Join us for our annual event and explore Taiwan cuisines!", image: "img/big.png", alt: "Students attending event the previous year"},
+  {title: "Hotpot Together", eventLocation: "HUB ", date: "Sat Feb 10 2024 14:30:00 GMT-0800 (Pacific Standard Time)",description: "Join us for our annual event and explore hotpot!", image: '/img/Hotpot.png', alt: "Students attending event the previous year"},
+  {title: "Lantern Night", eventLocation: "HUB ", date: "Sat Feb 10 2024 14:30:00 GMT-0800 (Pacific Standard Time)",description: "Join us for our annual event and explore hotpot!", image: '/img/Lantern.JPG', alt: "Students attending event the previous year"},
 ];
 
 
@@ -23,12 +23,13 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const { url, text } = imageTextPair[currentIndex];
+  const { image, title } = imageTextPair[currentIndex];
 
   // Navigation
   const navigate = useNavigate();
-  function navigateTo(props) {
-    navigate(props);
+  function navigateToEventPage() {
+    const eventData = imageTextPair[currentIndex];
+    navigate('/EventPage', { state: eventData });
   }
 
   // Data
@@ -39,11 +40,11 @@ export default function Home() {
 
   return (
     <div>
-      <header style={{ backgroundImage: `url(${url})`, height: '550px' }}>
+      <header style={{ backgroundImage: `url(${image})`, height: '550px' }}>
         <div className="titleWBtn">
-          <h1 className="BigEvent">{text}</h1>
+          <h1 className="BigEvent">{title}</h1>
           <div>
-            <button className="btn bigEventBtn" onClick={ () => navigateTo("/EventPage")}> Go to event </button>
+          <button className="btn bigEventBtn" onClick={navigateToEventPage}>Go to event</button>
           </div>
         </div>
       </header>

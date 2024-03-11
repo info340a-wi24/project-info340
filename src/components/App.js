@@ -11,10 +11,9 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./config";
 import { getDatabase, ref, push} from 'firebase/database';
 
-
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-
 
 export default function App(props) {
   useEffect(() => {
@@ -39,13 +38,13 @@ export default function App(props) {
 
   return (
     <div>
-        <Nav />
-        <Routes>
+      <Nav />
+      <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/CreateEvent" element={<Form />} />
           <Route path="/MyEvent" element={<MyEvents />} />
           <Route path="/Notifications" element={<Notifications />} />
-          <Route path="Event" element={<EventPage />}/>
+          <Route path="/EventPage" element={<EventPage />} />
       </Routes>
       <Footer />
     </div>
