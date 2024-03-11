@@ -5,7 +5,7 @@ const NotificationHeader = ({ onSortChange, messageCount }) => {
     <div className="notifHeader">
       <h3>Notifications</h3>
       <div className="messageAlert">
-        <p>{messageCount} New Messages</p>
+        <p>{messageCount} Messages</p>
         <div className="dropdown">
           <label htmlFor="drop-options">Sort By:</label>
           <select name="drop-options" id="drop-options" onChange={onSortChange}>
