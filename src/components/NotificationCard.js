@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 // in charge of the notification cards
 // create varibles to track when the dropdown menu is clicked. on delete
-// remove message like in bootstrap example.
+// remove message like in bootstrap example. this link is where I got the delete message inspo
+// https://www.bootdey.com/snippets/view/Rounded-and-Shadowed-Alerts
 // on read, update the state of the message. remove the red dot, update the count in the header
+// dropdown menu inspired by/ learned from: https://blog.hubspot.com/website/html-dropdown
 
 const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRead, onDelete, onExpand }) => {
   // is the notif read or not
@@ -13,12 +15,12 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
   const [isExpanded, setIsExpanded] = useState(false);
   // track the visibility of red notif dot
   const [showNotifDot, setShowNotifDot] = useState(true);
+  // track if message has been deleted
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const handleMarkAsRead = () => {
     if (!isRead && !markAsReadDisabled) {
     setMarkAsReadDisabled(true);
-    setIsRead(true); ///
-    // onMarkAsRead();
     setShowNotifDot(false);
     }
   };
@@ -26,17 +28,13 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
   const handleDelete = () => {
     if(!isRead) {
       setShowNotifDot(false);
-      // onMarkAsRead();
     }
+    setIsDeleted(true);
     onDelete();
   };
 
   const handleExpand = () => {
-    if (!isRead) {
-      setMarkAsReadDisabled(true);
-      setIsRead(true); ///
-      onMarkAsRead();
-    }
+    onMarkAsRead();
     setIsExpanded(!isExpanded);
     setShowNotifDot(false);
   };
@@ -53,7 +51,7 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
           <p id="notifTime">
             <small>{time}</small>
           </p>
-          {showNotifDot && <div class='notifDot'></div>}
+          {showNotifDot && <div className='notifDot'></div>}
         </div>
         <h4>{title}</h4>
         <p>{unexpandMessage}</p>

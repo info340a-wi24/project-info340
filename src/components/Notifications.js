@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import NotificationCard from './NotificationCard';
 import NotificationHeader from './NotificationHeader';
-// import sampleData from '../data/sample';
 import notifSample from '../data/notifSample.json';
 import Footer from './footer';
 
 const Notifications = () => {
   // the sort by read/unread in notif header
     const [sortOptions, setSortOptions] = useState('all');
-    // notif header message counter
+    // notif header message counter. the length of the data
     const [messageCounter, setMessageCounter] = useState(notifSample.length);
+    // notifications from data
     const [notifications, setNotifications] = useState(notifSample);
 
     // handle the change when a sort by is clicked in header
@@ -21,13 +21,11 @@ const Notifications = () => {
     // create a coppy of notifications then update the notification at that index
     const markAsRead = (index) => {
       // Update the notifDot and messageAlert count
-      //if expand message is clicked decrease read count and also dont allow markAsRead to be clicked again
-      // if expand is clicked, no mark as read. If marked as read it can still be expanded
       const updatedNotifications = [...notifications];
       updatedNotifications[index].isRead = true;
       setNotifications(updatedNotifications);
       // after notification has been marked decrease count
-      setMessageCounter(messageCounter - 1);
+      // setMessageCounter(messageCounter - 1);
     };
 
     // remove the notifcations
@@ -37,16 +35,17 @@ const Notifications = () => {
       updatedNotifications.splice(notificationIndex, 1);
       setNotifications(updatedNotifications);
       // if deleted notif was unread/unexpanded decrease the counter
-      if (!isRead && !isExpanded) {
+      // if (!isRead && !isExpanded) {
         setMessageCounter(messageCounter - 1);
-      }
+      // }
     };
 
     //handle what happens when expand message is clicked
     const handleExpand = (index) => {
       // this should also mark the message as read
       const updatedNotifications = [...notifications];
-      updatedNotifications[index].isExpanded = true;// Mark as read when expanding
+      // Mark as read when expanding
+      updatedNotifications[index].isExpanded = true;
       setNotifications(updatedNotifications);
     };
 
