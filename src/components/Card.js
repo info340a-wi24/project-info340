@@ -93,6 +93,7 @@ function CardEvent(props) {
                 </div>
 
                 <div className="col-sm">
+
                     <CardSubtitle className="date">{formattedDate}</CardSubtitle>
                     <CardTitle className="card-title">{info.title}</CardTitle>
                     <CardText className="card-text">{info.description}</CardText>
