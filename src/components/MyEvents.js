@@ -1,7 +1,8 @@
 import React from 'react';
 import { CardGrid } from './Card.js';
+import { getDatabase, ref, onValue, get } from 'firebase/database';
 
-export default function MyEvents() {
+export function MyEvents() {
 
     return (
         <div>
@@ -16,3 +17,28 @@ export default function MyEvents() {
         </div>
     );
 }
+
+/* function handleRegister(e) {
+    e.preventDefault();
+    console.log('You registered for this event.');
+
+    const db = getDatabase();
+    const dbRef = ref(db, 'my-events');
+
+    if (e) {
+        const loc = useLocation();
+        const {title, location, description, startTime, image, alt} = loc.state;
+        
+        const regEvent = {
+            title: {title},
+            location: {location},
+            description: {description},
+            startTime: {startTime},
+            image: {image},
+            alt: {alt}
+        }
+
+        push(regEvent, dbRef)
+        .catch((error) => console.log('Error: ', error));
+    }
+}; */

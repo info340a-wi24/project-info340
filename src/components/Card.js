@@ -60,6 +60,7 @@ export function CardGrid({dataRef}) {
 function CardEvent(props) {
     let info = props.data; 
     const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
+    info.date = formattedDate;
 
     const navigate = useNavigate();
 
