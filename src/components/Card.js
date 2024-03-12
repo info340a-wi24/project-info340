@@ -40,7 +40,7 @@ export function CardGrid({dataRef}) {
   const allPostsKeys = Object.keys(allPostsObj);
 
   let eventCards = allPostsKeys.map((key) => {
-    return <CardEvent id={key} key={key} data={allPostsObj[key]} />;
+    return <CardEvent id={key} key={key} data={allPostsObj[key]} refer={dataRef} />;
   })
 
   if (allPostsKeys.length === 0) {
@@ -61,21 +61,6 @@ function CardEvent(props) {
     let info = props.data; 
     const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
 
-    // this chunk of code converting from blob to image inspired by https://stackoverflow.com/questions/14952052/convert-blob-url-to-normal-url
-    // save me StackOverflow...save me
-    let blobToImage=(binaryUrl) => {
-      var canvas=document.createElement("canvas")
-      var img=document.createElement("img");
-      img.src=binaryUrl;
-      var context=canvas.getContext("2d")
-      context.drawImage(img, 0, 0);
-      return canvas.toDataURL();
-    }
-    
-    let blobUrl = info.image.slice(5);           //oh to slice(5) or not to slice(5)...why does firebase store as blob anw...
-    let imgUrl = blobToImage(blobUrl);
-    
-    // for navigating to details 
     const navigate = useNavigate();
 
     function navigateToEventPage() {
@@ -89,7 +74,7 @@ function CardEvent(props) {
         <CardBody>
             <div className="row me-2">
                 <div className="event_img">
-                    <CardImg id="card-image" className="event1" src={imgUrl} alt={info.alt} />
+                    <CardImg id="card-image" className="event1" src={info.image} alt={info.alt} />
                 </div>
 
                 <div className="col-sm">
