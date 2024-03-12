@@ -7,31 +7,14 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 // Code heavily inspired by Problem Set 8 'PetList.js'
 // ChatGPT helped debug this
 // Handles card display on page
-export function CardGrid(props) {
-  //const info = props.data || [];
-  /* const db = getDatabase();
-  const postsRef = ref(db, 'posts');
-  console.log(postsRef);
-
-  const postsSnap = onValue(postsRef, (snapshot) => {
-    const postsVal = snapshot.val();
-    return postsVal;
-  })
-  console.log(postsSnap);
-
-  const allPostsObj =  postsSnap;
-  console.log(allPostsObj);
- 
-  const allPostsKeys = Object.keys(allPostsObj);
-  console.log(allPostsKeys); */
-
+export function CardGrid({dataRef}) {
   const [allPostsObj, setAllPostsObj] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const db = getDatabase();
-      const postsRef = ref(db, 'posts');
+      const postsRef = ref(db, dataRef);
 
       try {
         const snapshot = await onValue(postsRef, (snapshot) => {
@@ -48,10 +31,10 @@ export function CardGrid(props) {
     };
 
     fetchData();
-  }, []);
+  }, [dataRef]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="event-style mb-5 p-5">Loading...</div>;
   }
 
   const allPostsKeys = Object.keys(allPostsObj);
@@ -61,7 +44,7 @@ export function CardGrid(props) {
   })
 
   if (allPostsKeys.length === 0) {
-    eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>
+    eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>;
   }
 
   return (
@@ -75,29 +58,45 @@ export function CardGrid(props) {
 
 // Creates event cards
 function CardEvent(props) {
-    let info = props.data;
-    const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy');
-    const newLink = info.image.slice(5);
+    let info = props.data; 
+    const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
 
+    // this chunk of code converting from blob to image inspired by https://stackoverflow.com/questions/14952052/convert-blob-url-to-normal-url
+    // save me StackOverflow...save me
+    let blobToImage=(binaryUrl) => {
+      var canvas=document.createElement("canvas")
+      var img=document.createElement("img");
+      img.src=binaryUrl;
+      var context=canvas.getContext("2d")
+      context.drawImage(img, 0, 0);
+      return canvas.toDataURL();
+    }
+    
+    let blobUrl = info.image.slice(5);           //oh to slice(5) or not to slice(5)...why does firebase store as blob anw...
+    let imgUrl = blobToImage(blobUrl);
+    
+    // for navigating to details 
     const navigate = useNavigate();
-    function navigateTo(info) {
-    navigate(info);
-  }
 
+    function navigateToEventPage() {
+      navigate('/EventPage', { state: { ...info } });
+    }
+
+    // returns cards with event info
     return (
     <div className="col-md-6 col-xl-3 ">
       <Card className="card mb-2">
         <CardBody>
             <div className="row me-2">
                 <div className="event_img">
-                    <CardImg className="event1" src={new URL(newLink)} alt={info.alt} />
+                    <CardImg id="card-image" className="event1" src={imgUrl} alt={info.alt} />
                 </div>
 
                 <div className="col-sm">
                     <CardSubtitle className="date">{formattedDate}</CardSubtitle>
                     <CardTitle className="card-title">{info.title}</CardTitle>
                     <CardText className="card-text">{info.description}</CardText>
-                    <button className="btn btn-dark" onClick={ () => navigateTo("/EventPage")}>Go to event</button>
+                    <button className="btn btn-dark" onClick={ () => navigateToEventPage(info)}>Go to event</button>
                 </div>
             </div>
         </CardBody>
