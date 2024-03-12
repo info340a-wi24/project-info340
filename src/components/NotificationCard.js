@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 // in charge of the notification cards
 // create varibles to track when the dropdown menu is clicked. on delete
 // remove message like in bootstrap example. this link is where I got the delete message inspo
@@ -14,14 +14,19 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
   // has expand message been used
   const [isExpanded, setIsExpanded] = useState(false);
   // track the visibility of red notif dot
-  const [showNotifDot, setShowNotifDot] = useState(true);
-  // track if message has been deleted
-  const [isDeleted, setIsDeleted] = useState(false);
+  const [showNotifDot, setShowNotifDot] = useState(!isRead); // true
+
+  // Update showNotifDot when isRead prop changes
+  useEffect(() => {
+    setShowNotifDot(!isRead);
+  }, [isRead]);
 
   const handleMarkAsRead = () => {
     if (!isRead && !markAsReadDisabled) {
     setMarkAsReadDisabled(true);
+    // setIsRead(true);
     setShowNotifDot(false);
+    onMarkAsRead(); // 
     }
   };
 
@@ -29,11 +34,11 @@ const NotificationCard = ({ clubLogo, clubName, time, title, content, onMarkAsRe
     if(!isRead) {
       setShowNotifDot(false);
     }
-    setIsDeleted(true);
     onDelete();
   };
 
   const handleExpand = () => {
+    setIsRead(true);
     onMarkAsRead();
     setIsExpanded(!isExpanded);
     setShowNotifDot(false);

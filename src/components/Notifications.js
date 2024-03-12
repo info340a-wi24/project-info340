@@ -53,7 +53,7 @@ const Notifications = () => {
     // filter 
     const filterNotifs = notifications.filter((notification) => {
       if (sortOptions === 'unread') {
-        return !notification.isRead && !notification.isExpanded;
+        return !notification.isRead && !notification.isExpanded && !notification.isDeleted;
       } else if (sortOptions === 'read') {
         return notification.isRead || notification.isExpanded;
       } else {
