@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useNavigate } from 'react-router-dom';
 import { CardGrid } from './Card';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 
 
@@ -32,11 +33,34 @@ export default function Home() {
     navigate('/EventPage', { state: eventData });
   }
 
+
+  //fetch data from firebase
+  const [posts, setEvents] = useState([]); // State to store the fetched events
+  const [loading, setLoading] = useState(true); // State to handle loading status
+
+  useEffect(() => {
+    // Initialize the database and reference
+    const db = getDatabase();
+    const eventsRef = ref(db, 'posts');
+
+    // Listen for data updates
+    onValue(eventsRef, (snapshot) => {
+      const data = snapshot.val();
+      const eventsArray = Object.keys(data).map((key) => data[key]);
+      setEvents(eventsArray);
+      setLoading(false);
+    });
+  }, []);
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
   // Data
-  const uData = [{title: "Timeless Taiwan", location: "HUB 224", date: "02/10/2024",description: "Join us for our annual event and explore Taiwan cuisines!", image: "img/big.png", alt: "Students attending event the previous year", hashtags: "#tosa #timelesstaiwan #nightmarket"},
-                        {title: "iSchool Career Fair 2024", location: "HUB Ballroom", date: "02/14/2024", description: "Engage for opportunities to connect with employers from various industries!", image: "img/careerfair2.jpg", alt: "Students attending event the previous year", hashtags: "#job #internship #informatics #careerfair"},
-                        {title: "HUB Winter Makers Fair", location: "HUB Walkway", date: "02/15/2024", description: "Explore crafts and items made by members of the UW community at the Winter Makers Fair!", image: "img/02_22_23_WinterMakersFair-07-1800x1013.jpg", alt: "Students attending event the previous year", hashtags: "#hub #makersfair #winter #creative #uwcommunity #uwcreatives"},
-                        {title: "2024 Hack for Social Good", location: "Mary Gates Hall", date: "04/15/2024", description: "An in-person hackathon for high schoolers organized by iSchool student organizations!", image: "img/IMG_8514.PNG", alt: "Students attending event the previous year", hashtags: "#ischool #hackathon #ideas #winfo #iuga #binfo #uwdreamproject"}]
+  // const uData = [{title: "Timeless Taiwan", eventLocation: "HUB 224", date: "02/10/2024",description: "Join us for our annual event and explore Taiwan cuisines!", image: "img/big.png", alt: "Students attending event the previous year", hashtags: "#tosa #timelesstaiwan #nightmarket"},
+  //                       {title: "iSchool Career Fair 2024", eventLocation: "HUB Ballroom", date: "02/14/2024", description: "Engage for opportunities to connect with employers from various industries!", image: "img/careerfair2.jpg", alt: "Students attending event the previous year", hashtags: "#job #internship #informatics #careerfair"},
+  //                       {title: "HUB Winter Makers Fair", eventLocation: "HUB Walkway", date: "02/15/2024", description: "Explore crafts and items made by members of the UW community at the Winter Makers Fair!", image: "img/02_22_23_WinterMakersFair-07-1800x1013.jpg", alt: "Students attending event the previous year", hashtags: "#hub #makersfair #winter #creative #uwcommunity #uwcreatives"},
+  //                       {title: "2024 Hack for Social Good", eventLocation: "Mary Gates Hall", date: "04/15/2024", description: "An in-person hackathon for high schoolers organized by iSchool student organizations!", image: "img/IMG_8514.PNG", alt: "Students attending event the previous year", hashtags: "#ischool #hackathon #ideas #winfo #iuga #binfo #uwdreamproject"}]
 
   return (
     <div>
@@ -44,13 +68,13 @@ export default function Home() {
         <div className="titleWBtn">
           <h1 className="BigEvent">{title}</h1>
           <div>
-          <button className="btn bigEventBtn" onClick={navigateToEventPage}>Go to event</button>
+          {/* <button className="btn bigEventBtn" onClick={navigateToEventPage}>Go to event</button> */}
           </div>
         </div>
       </header>
 
       <main>
-        <CardGrid data={uData} />
+        <CardGrid data={posts} />
       </main>
     </div>
   );

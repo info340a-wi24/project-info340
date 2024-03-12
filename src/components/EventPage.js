@@ -1,11 +1,33 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import Nav from './Nav';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 
 export default function EventPage(props) {
+  const { eventId } = useParams();
+  const [eventData, setEventData] = useState(null);
   const location = useLocation();
-  const {title, eventLocation, description, image, date} = location.state;
+
+  useEffect(() => {
+    const db = getDatabase();
+    const eventRef = ref(db, `posts/${eventId}`);
+
+    onValue(eventRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setEventData(data);
+      }
+    }, {
+      onlyOnce: true
+    });
+  }, [eventId]);
+
+  if (!eventData) {
+    return <div>Loading...</div>;
+  }
+
+  const { title, eventLocation, description, image, date } = eventData;
 
   return(
     <div>

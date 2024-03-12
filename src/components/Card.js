@@ -21,7 +21,7 @@ export function CardGrid(props) {
 
   const allPostsObj =  postsSnap;
   console.log(allPostsObj);
- 
+
   const allPostsKeys = Object.keys(allPostsObj);
   console.log(allPostsKeys); */
 
@@ -78,11 +78,12 @@ function CardEvent(props) {
     let info = props.data;
     const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy');
     const newLink = info.image.slice(5);
+    let id = props.id;
 
     const navigate = useNavigate();
 
-    function navigateToEventPage() {
-      navigate('/EventPage', { state: { ...info } });
+    function navigateToEventPage(eventId) {
+      navigate(`/Event/${eventId}`);
     }
 
     return (
@@ -99,7 +100,7 @@ function CardEvent(props) {
                     <CardSubtitle className="date">{formattedDate}</CardSubtitle>
                     <CardTitle className="card-title">{info.title}</CardTitle>
                     <CardText className="card-text">{info.description}</CardText>
-                    <button className="btn btn-dark" onClick={ () => navigateToEventPage(info)}>Go to event</button>
+                    <button className="btn btn-dark" onClick={() => navigateToEventPage(id)}>Go to event</button>
 
                 </div>
             </div>
