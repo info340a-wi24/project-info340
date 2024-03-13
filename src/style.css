@@ -34,18 +34,10 @@ font-size: 12px;
 }
 
 /* media query default */
-.pages {
+/* .pages {
   display: none;
-}
+} */
 
-
-#hamburger {
-  display: inline;
-  position: fixed;
-  right: 20px;
-  color: rgb(245, 245, 238);
-  text-shadow: none;
-}
 
 /* Nav Bar */
 nav {
@@ -86,6 +78,19 @@ a:hover {
   border-bottom: 0.4rem solid #f0f0f0;
   transition: 0.25s ease-out;
 }
+
+.icon {
+  display: none;
+}
+
+.close-icon {
+  display: none;
+}
+
+.websiteIcon {
+  display: none;
+}
+
 
 /* header*/
 header {
@@ -456,7 +461,7 @@ footer p:last-of-type {
 /* flexbox containers*/
 .createEv-container {
   display: flex;
-  height: 1000;
+  height: 1100;
   width: 100%;
   flex: 1;
 }
@@ -481,8 +486,6 @@ footer p:last-of-type {
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
-
-
 }
 
 .fa-save {
@@ -590,10 +593,6 @@ button[type=submit]:hover {
       display: inline;
   }
 
-  #hamburger {
-      display: none;
-  }
-
   h1 {
     font-size: 128px;
   }
@@ -619,3 +618,74 @@ button[type=submit]:hover {
     margin: 14px 8px;
   }
 }
+
+@media (max-width: 598px) {
+  .WebName {
+    display: fixed;
+  }
+
+  nav {
+    padding:1.5rem;
+  }
+
+  nav > ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left:-100%;
+    line-height: 35px;
+    max-width: 220px;
+    width: 50%;
+    background: #3e436f;
+  }
+
+  .nav-list.open {
+    left: 0;
+  }
+
+  nav > ul > li {
+    display: block;
+    margin: 25px;
+    text-decoration: none;
+  }
+
+  a.icon {
+    float: left;
+    display: block;
+    font-size: 22px;
+    text-decoration: none;
+  } 
+
+  .left-aligned {
+    left: 0;
+  }
+
+  .close-icon {
+    font-size: 22px;
+    display:block;
+    margin-left:190px;
+    margin-bottom: 8px;
+  }
+
+  .close-icon:hover{
+    color: white;
+    border-bottom: 0.2rem solid #f0f0f0;
+    transition: 0.25s ease-out;
+  }
+
+  .websiteIcon {
+    display: block;
+    width:30px;
+    position: absolute;
+    left: calc((100% - 50px) / 2);
+    
+  }
+  
+}
+
+/* @media (max-width: 650px) {
+  li {
+    size: 64px;
+  }
+} */
+  
