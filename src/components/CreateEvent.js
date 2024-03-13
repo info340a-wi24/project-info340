@@ -11,7 +11,7 @@ import { Button} from 'reactstrap';
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const postsRef = ref(db, 'posts');
+const postsRef = ref(db, 'dataHome');
 
 export default function Form (props) {
     const[title, setTitle] = useState('');

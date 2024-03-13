@@ -1,13 +1,11 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { getDatabase, ref, push } from 'firebase/database';
-import MyEvents from './MyEvents';
-
 
 export default function EventPage(props) {
   // const loc = useLocation();
   // const {title, location, description, startTime, image, alt, date} = loc.state;
-
+  const navigate = useNavigate();
   const loc = useLocation();
   const eventData = loc.state;
 
@@ -28,21 +26,25 @@ export default function EventPage(props) {
     const db = getDatabase();
     const dbRef = ref(db, 'my-events');
 
-    if (e) {
-        const regEvent = {
-            title: {title},
-            location: {location},
-            description: {description},
-            startTime: {startTime},
-            image: {image},
-            alt: {alt}
-        }
-
-        push(regEvent, dbRef)
-        .catch((error) => console.log('Error: ', error));
+    const regEvent = {
+        title,
+        location,
+        description,
+        startTime,
+        image,
+        alt
     }
-    <MyEvents />
-};
+
+    function navigateToMyEvent() {
+      navigate('/MyEvent');
+    }
+    push(dbRef, regEvent)
+        .then(() => {
+            console.log('Registered for event successfully!');
+            navigateToMyEvent();
+        })
+        .catch((error) => console.log('Error: ', error));
+  };
 
   return(
     <div>

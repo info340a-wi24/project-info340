@@ -5,7 +5,7 @@ export default function MyEvents() {
 
     return (
         <div>
-            <header className="event-head">
+            <header id="event-head">
                 <div>
                     <h2>My Events</h2>
                 </div>

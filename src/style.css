@@ -126,9 +126,12 @@ header {
   bottom: 15px;
   left: 1rem;
 }
+.event_info {
+  margin-top: 8rem;
+}
 
 .EventTitle {
-  padding-top: 17rem;
+  padding-top: 14rem;
   margin-left: 4rem;
 }
 
@@ -693,9 +696,4 @@ button[type=submit]:hover {
   
 }
 
-/* @media (max-width: 650px) {
-  li {
-    size: 64px;
-  }
-} */
   
