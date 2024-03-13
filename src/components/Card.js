@@ -33,6 +33,7 @@ export function CardGrid({dataRef}) {
     fetchData();
   }, [dataRef]);
 
+  // loading screen to inform users
   if (loading) {
     return <div className="event-style mb-5 p-5">Loading...</div>;
   }
@@ -43,6 +44,7 @@ export function CardGrid({dataRef}) {
     return <CardEvent id={key} key={key} data={allPostsObj[key]} refer={dataRef} />;
   })
 
+  // when there are no registered events
   if (allPostsKeys.length === 0) {
     eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>;
   }
@@ -59,7 +61,12 @@ export function CardGrid({dataRef}) {
 // Creates event cards
 function CardEvent(props) {
     let info = props.data; 
-    const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
+    const time = new Date(info.startTime);
+    let formattedDate = '';
+    if (!isNaN(time.getTime())) {
+      formattedDate = format(time, 'MM/dd/yyyy');
+    }
+    //const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
     info.date = formattedDate;
 
     const navigate = useNavigate();
