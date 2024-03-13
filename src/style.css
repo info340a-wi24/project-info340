@@ -378,9 +378,9 @@ footer p:last-of-type {
 /* Mai's code*/
 #event-head {
   position: relative;
+  color: black;
   margin: 7rem 2rem 2rem 2rem;
   font-weight: bolder;
-  background-color: #3e436f;
   background-image: none;
   margin-bottom: 0;
 }

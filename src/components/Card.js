@@ -1,21 +1,53 @@
-import React from 'react';
-import {useNavigate } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
+import { Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText } from 'react-bootstrap';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 // Code heavily inspired by Problem Set 8 'PetList.js'
-export function CardGrid(props) {
-  const info = props.data || [];
+// ChatGPT helped debug this
+// Handles card display on page
+export function CardGrid({dataRef}) {
+  const [allPostsObj, setAllPostsObj] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  /* const eventCards = info.slice(4).map((eventInfo, i) => {
-    return <CardEvent key={i} data={info[i]} />;
-  }) */
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = getDatabase();
+      const postsRef = ref(db, dataRef);
 
-  let eventCards = [];
-  // Only show four at a time
-  for (let i = 0; i < 4; i++) {
-    eventCards.push(<CardEvent key={i} data={info[i]}/>);
+      try {
+        const snapshot = await onValue(postsRef, (snapshot) => {
+          const postsVal = snapshot.val();
+          if (postsVal) {
+            setAllPostsObj(postsVal);
+          }
+        });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [dataRef]);
+
+  // loading screen to inform users
+  if (loading) {
+    return <div className="event-style mb-5 p-5">Loading...</div>;
   }
 
+  const allPostsKeys = Object.keys(allPostsObj);
+
+  let eventCards = allPostsKeys.map((key) => {
+    return <CardEvent id={key} key={key} data={allPostsObj[key]} refer={dataRef} />;
+  })
+
+  // when there are no registered events
+  if (allPostsKeys.length === 0) {
+    eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>;
+  }
 
   return (
       <div className="event-style">
@@ -26,33 +58,42 @@ export function CardGrid(props) {
   );
 }
 
+// Creates event cards
 function CardEvent(props) {
-    let info = props.data;
-
+    let info = props.data; 
+    const time = new Date(info.startTime);
+    let formattedDate = '';
+    if (!isNaN(time.getTime())) {
+      formattedDate = format(time, 'MM/dd/yyyy');
+    }
+    //const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
+    info.date = formattedDate;
     const navigate = useNavigate();
-    function navigateTo(props) {
-    navigate(props);
-  }
 
+    function navigateToEventPage(eventId) {
+      navigate(`/Event/${eventId}`);
+    }
+
+    // returns cards with event info
     return (
     <div className="col-md-6 col-xl-3 ">
-      <div className="card mb-2">
-          <div className="card-body">
-              <div className="row me-2">
-                  <div className="event_img">
-                      <img className="event1" src={`${info.image}`} alt={info.alt} />
-                  </div>
+      <Card className="card mb-2">
+        <CardBody>
+            <div className="row me-2">
+                <div className="event_img">
+                    <CardImg id="card-image" className="event1" src={info.image} alt={info.alt} />
+                </div>
 
-                  <div className="col-sm">
-                      <h6 className="date">{info.date}</h6>
-                      <h4 className="card-title">{info.title}</h4>
-                      <p className="card-text">{info.description}</p>
-                      <button className="btn btn-dark" onClick={ () => navigateTo("/EventPage")}>Go to event</button>
-                      <h6 className="card-notes">{info.hashtags}</h6>
-                  </div>
-              </div>
-          </div>
-      </div>
+                <div className="col-sm">
+
+                    <CardSubtitle className="date">{formattedDate}</CardSubtitle>
+                    <CardTitle className="card-title">{info.title}</CardTitle>
+                    <CardText className="card-text">{info.description}</CardText>
+                    <button className="btn btn-dark" onClick={ () => navigateToEventPage(info)}>Go to event</button>
+                </div>
+            </div>
+        </CardBody>
+      </Card>
     </div>
     );
 }

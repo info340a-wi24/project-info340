@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import Nav from './Nav';
+import { getDatabase, ref, push } from 'firebase/database';
+import MyEvents from './MyEvents';
 
 
-export default function EventPage() {
-  const uData = [{
-    title: "Timeless Taiwan",
-    location: "HUB 224",
-    date: "02/10/2024",
-    description: "Attention everyone‼️ Brace yourselves for the exhilarating extravaganza of the year— TOSA’s annual event, TIMELESS TAIWAN: Journey Through Time! ✨⏳ Immerse yourself in the vibrant world of Taiwanese street food, classic night market games, and breathtaking performances🤩Stay tuned for more exciting updates...",
-    image: "img/big.png",
-    alt: "Students attending event the previous year",
-    hashtags: "#tosa #timelesstaiwan #nightmarket"}];
+export default function EventPage(props) {
+  const loc = useLocation();
+  const {title, location, description, startTime, image, alt, date} = loc.state;
 
-  const { title, location, image, date, description } = uData[0];
+  // handle registration
+  function handleRegister(e) {
+    e.preventDefault();
+    console.log('You registered for this event.');
+
+    const db = getDatabase();
+    const dbRef = ref(db, 'my-events');
+
+    if (e) {
+        const regEvent = {
+            title: {title},
+            location: {location},
+            description: {description},
+            startTime: {startTime},
+            image: {image},
+            alt: {alt}
+        }
+
+        push(regEvent, dbRef)
+        .catch((error) => console.log('Error: ', error));
+    }
+    <MyEvents />
+};
 
   return(
     <div>
-      <Nav />
       <header style={{ backgroundImage: `url(${image})`, height: '450px' }}>
           <h1 className="BigEvent EventTitle">{title}</h1>
       </header>
@@ -28,9 +46,9 @@ export default function EventPage() {
           <h5><div className="event_details"><strong className="colorTitle">Location: </strong>{location}</div></h5>
         </div>
         <h4><div className="event_description">{description}</div></h4>
-        <a href="#" className="btn btn-dark register">Register</a>
-      </div>
-    </main>
+        <button type="submit" onClick={handleRegister} className="btn btn-dark register">Register</button>
+        </div>
+      </main>
     </div>
   );
 }
