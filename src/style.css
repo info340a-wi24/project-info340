@@ -376,13 +376,13 @@ footer p:last-of-type {
 }
 
 /* Mai's code*/
-#event-head {
+.event-head {
   position: relative;
   color: black;
   margin: 7rem 2rem 2rem 2rem;
-  font-weight: bolder;
   background-image: none;
   margin-bottom: 0;
+  text-shadow: none;
 }
 
 .event-title {
@@ -499,6 +499,10 @@ footer p:last-of-type {
 /* form input styling */
 .createEv {
   margin-top: 100px;
+  position: relative;
+  color: black;
+  margin: 7rem 2rem 2rem 1rem;
+  margin-bottom: 0;
 }
 
 .times {
@@ -649,7 +653,7 @@ button[type=submit]:hover {
     text-decoration: none;
   }
 
-  a.icon {
+  .icon {
     float: left;
     display: block;
     font-size: 22px;
@@ -668,6 +672,12 @@ button[type=submit]:hover {
   }
 
   .close-icon:hover{
+    color: white;
+    border-bottom: 0.2rem solid #f0f0f0;
+    transition: 0.25s ease-out;
+  }
+
+  .icon:hover{
     color: white;
     border-bottom: 0.2rem solid #f0f0f0;
     transition: 0.25s ease-out;

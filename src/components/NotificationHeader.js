@@ -6,7 +6,7 @@ import React from 'react';
 const NotificationHeader = ({ onSortChange, messageCount }) => {
   return (
     <div className="notifHeader">
-      <h3>Notifications</h3>
+      <h2>Notifications</h2>
       <div className="messageAlert">
         <p>{messageCount} Messages</p>
         <div className="dropdown">

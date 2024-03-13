@@ -1,5 +1,5 @@
-import React, { useEffect,  Navigate } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { Navigate } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import EventPage from './EventPage';
 import Nav from './Nav';
@@ -9,16 +9,7 @@ import Footer from './footer';
 import Notifications from './Notifications';
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./config";
-import { getDatabase, ref, push, set} from 'firebase/database';
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Import the functions you need from the SDKs                      you need
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref } from "firebase/database";
-import { firebaseConfig } from '../config';
+import { getDatabase, ref} from 'firebase/database';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -75,7 +66,6 @@ export default function App(props) {
   //   // This empty array as the second argument to useEffect tells React
   //   // to only execute the effect after the first render, making it run only once.
   // }, []);
-
   return (
     <div>
       <Nav />
