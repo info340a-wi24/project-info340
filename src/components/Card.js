@@ -69,11 +69,10 @@ function CardEvent(props) {
     }
     //const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
     info.date = formattedDate;
-
     // navigate to EventPage with event details
     const navigate = useNavigate();
-    function navigateToEventPage() {
-      navigate('/EventPage', { state: { ...info } });
+    function navigateToEventPage(eventId) {
+      navigate(`/Event/${eventId}`);
     }
 
     // returns cards with event info for My Events

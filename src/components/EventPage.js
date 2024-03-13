@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import Nav from './Nav';
 import { getDatabase, ref, push } from 'firebase/database';
 import MyEvents from './MyEvents';
