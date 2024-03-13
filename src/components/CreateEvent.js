@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { push } from 'firebase/database';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref } from "firebase/database";
-import { firebaseConfig } from '../config';
+import { firebaseConfig } from './config';
 import { Button} from 'reactstrap';
 
 // Initialize Firebase

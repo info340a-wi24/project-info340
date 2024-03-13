@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import NotificationCard from './NotificationCard';
 import NotificationHeader from './NotificationHeader';
 import notifSample from '../data/notifSample.json';
-import Footer from './footer';
 
 const Notifications = () => {
   // the sort by read/unread in notif header
