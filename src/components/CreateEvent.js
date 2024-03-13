@@ -2,16 +2,30 @@ import React, { useState } from 'react';
 import {useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { push } from 'firebase/database';
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref } from "firebase/database";
+import { firebaseConfig } from '../config';
+import { Button} from 'reactstrap';
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const postsRef = ref(db, 'posts');
 
 export default function Form (props) {
-
     const[title, setTitle] = useState('');
     const[location, setLocation] = useState('');
     const [startTime, setStartTime] = useState(null);
     const [endTime, setEndTime] = useState(null);
     const[description, setDescription] = useState('');
     const[image, setImage] = useState(null);
+    const[alt, setAlt] = useState('');
+
+
+    const notReady = title === '' || location === '' || startTime === null || 
+    endTime === null || description === '' || image === null
+
 
     const startHandler = (date) => {
         setStartTime(date);
@@ -22,7 +36,6 @@ export default function Form (props) {
     }
 
     const dropHandler = (e) => {
-        console.log(e.target.files);
         setImage(URL.createObjectURL(e.target.files[0]));
     }
 
@@ -31,55 +44,35 @@ export default function Form (props) {
       navigate(props);
     }
 
-    // onFileUpload = () => {
-    //     // Create an object of formData
-    //     const formData = new FormData();
-
-    //     // Update the formData object
-    //     formData.append(
-    //         "myFile",
-    //         this.state.selectedFile,
-    //         this.state.selectedFile.name
-    //     );
-
-    //     // Details of the uploaded file
-    //     console.log(this.state.selectedFile);
-
-    //     // // Request made to the backend api
-    //     // // Send formData object
-    //     // axios.post("api/uploadfile", formData);
-    // };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const sendPost = () => {
+        // preventDefault
         const post = {
             title,
             location,
-            startTime,
-            endTime,
+            startTime: startTime.toString(),
+            endTime: endTime.toString(),
             description,
-            image
-        }
-
+            image,
+            alt
+        };
+    
+        push(postsRef, post)
+        .catch((error) => console.log('Error: ', error))
+        .then(() => navigateTo("/Home"));
     }
 
     return (
         <div>
             <main>
-            <div class="createEv-container">
-                {/* <section>
-                    <div class="sidebar">
-                        <i class="fa fa-save" aria-label="save-form" style="font-size:36px;"></i>
-                    </div>
-                </section> */}
+            <div className="createEv-container">
 
                 <section>
-                    <div class="form-container">
-                        <h2  class="createEv">
+                    <div className="form-container">
+                        <h2  className="createEv">
                             Create your event!
                         </h2>
-
-                        <form method="Post" action="/Publish" onSubmit={handleSubmit}>
+                        {/* onSubmit={handleSubmit} */}
+                        <form method="Post" action="/Publish" >
 
                             <label for="title_input">
                                 Title:
@@ -103,7 +96,7 @@ export default function Form (props) {
                             </label>
 
 
-                            <div class="time">
+                            <div className="time">
 
                                 <div className='start'>
                                     <label for="Start_time">
@@ -111,6 +104,7 @@ export default function Form (props) {
                                     <DatePicker
                                         selected={startTime}
                                         onChange={startHandler}
+                                        minDate={new Date()}
                                         dateFormat='MM/dd/yyyy HH:mm'
                                         showTimeSelect
                                         timeInterval={15}
@@ -124,12 +118,13 @@ export default function Form (props) {
                                     <label for="Start_time">
                                         End time:
                                     <DatePicker
-                                    selected={endTime}
-                                    onChange={endHandler}
-                                    dateFormat='MM/dd/yyyy HH:mm'
-                                    showTimeSelect
-                                    timeInterval={15}
-                                    timeFormat='HH:mm'
+                                        selected={endTime}
+                                        onChange={endHandler}
+                                        minDate={startTime}
+                                        dateFormat='MM/dd/yyyy HH:mm'
+                                        showTimeSelect
+                                        timeInterval={15}
+                                        timeFormat='HH:mm'
 
                                     />
                                     </label>
@@ -138,7 +133,7 @@ export default function Form (props) {
 
                             <label for="description_input">
                                 Description:
-                                <textarea class="description" id="description_input" name="description"
+                                <textarea className="description" id="description_input" name="description"
                                 rows="10" cols="50" placeholder="Share something about your event :))"
                                 onChange={(e) => setDescription(e.target.value)}
                                 />
@@ -146,12 +141,22 @@ export default function Form (props) {
 
 
                             <p>Upload the graphic of your event here: </p>
-                            <input type="file" onChange={dropHandler} />
-                            <img src={image} alt={title}/>
+                            <input type="file" accept='.jpg,.png' onChange={dropHandler} />
+                            {/* <img src={image} alt={title}/> */}
+
+                            <label for="alt_input">
+                                Alternate text:
+                                <input type="text"
+                                id="alt"
+                                name="alt" size="20"
+                                placeholder="Put in the alt text for your image here..."
+                                onChange={(e) => setAlt(e.target.value)}
+                                />
+                            </label>
+
                         </form>
 
-                        <button type="submit" onClick={ () => navigateTo("/Home")}>Publish</button>
-                        {/* <button type="submit" id="save">Save</button> */}
+                        <Button type="submit" onClick={sendPost} disabled={notReady}>Publish</Button>
                     </div>
                 </section>
             </div>
