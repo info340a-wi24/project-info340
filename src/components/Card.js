@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { format } from 'date-fns';
 import { Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText } from 'react-bootstrap';
 import { getDatabase, ref, onValue } from 'firebase/database';
@@ -70,8 +70,8 @@ function CardEvent(props) {
     info.date = formattedDate;
     const navigate = useNavigate();
 
-    function navigateToEventPage(eventId) {
-      navigate(`/Event/${eventId}`);
+    function navigateToEventPage(eventData) {
+      navigate(`/EventPage/${eventData}`, { state: eventData });
     }
 
     // returns cards with event info

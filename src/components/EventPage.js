@@ -1,6 +1,9 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 import { getDatabase, ref, push } from 'firebase/database';
+import MyEvents from './MyEvents';
+
 
 export default function EventPage(props) {
   // const loc = useLocation();
