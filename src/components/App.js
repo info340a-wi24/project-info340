@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,  Navigate } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import EventPage from './EventPage';
@@ -14,6 +14,16 @@ import { getDatabase, ref, push, set} from 'firebase/database';
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
+// Import the functions you need from the SDKs                      you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref } from "firebase/database";
+import { firebaseConfig } from '../config';
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const postsRef = ref(db, 'posts');
 
 export default function App(props) {
   // useEffect(() => {
@@ -66,7 +76,6 @@ export default function App(props) {
   //   // to only execute the effect after the first render, making it run only once.
   // }, []);
 
-
   return (
     <div>
       <Nav />
@@ -74,8 +83,10 @@ export default function App(props) {
           <Route path="/Home" element={<Home />} />
           <Route path="/CreateEvent" element={<Form />} />
           <Route path="/MyEvent" element={<MyEvents />} />
-          <Route path="/Notifications" element={<Notifications />} />
+          <Route path="/Notifications" element={<Notifications />} ref={postsRef} />
           <Route path="/EventPage/:eventId" element={<EventPage />} />
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<Navigate to='/Home' />} />
       </Routes>
       <Footer />
     </div>
