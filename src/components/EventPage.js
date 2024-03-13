@@ -1,25 +1,65 @@
 import React from 'react';
-import Nav from './Nav';
+import { useLocation } from 'react-router-dom';
+import { getDatabase, ref, push } from 'firebase/database';
+import MyEvents from './MyEvents';
 
 
-export default function EventPage() {
+export default function EventPage(props) {
+  // const loc = useLocation();
+  // const {title, location, description, startTime, image, alt, date} = loc.state;
+
+  const loc = useLocation();
+  const eventData = loc.state;
+
+  if (!eventData) {
+    // Handle the case where no event data was passed
+    return <div>No event data!</div>;
+  }
+
+  const { title, location, description, startTime, image, alt } = eventData;
+
+
+
+  // handle registration
+  function handleRegister(e) {
+    e.preventDefault();
+    console.log('You registered for this event.');
+
+    const db = getDatabase();
+    const dbRef = ref(db, 'my-events');
+
+    if (e) {
+        const regEvent = {
+            title: {title},
+            location: {location},
+            description: {description},
+            startTime: {startTime},
+            image: {image},
+            alt: {alt}
+        }
+
+        push(regEvent, dbRef)
+        .catch((error) => console.log('Error: ', error));
+    }
+    <MyEvents />
+};
+
   return(
     <div>
-      <Nav />
-      <header style={{ backgroundImage: `./img/big.png`, height: '450px' }}>
-          <h1 className="BigEvent">Timeless Taiwan</h1>
+      <header style={{ backgroundImage: `url(${image})`, height: '450px' }}>
+          <h1 className="BigEvent EventTitle">{title}</h1>
       </header>
 
       <main>
       <div className="event_info">
         <div className="Titles">
-          <h5><div className="event_details"><strong className="colorTitle">Time: </strong> 2024.03.09 (Sat) 19:30 - 20:20</div></h5>
-          <h5><div className="event_details"><strong className="colorTitle">Location: </strong>After purchase completed, you can enter the live stream from the ticket page.</div></h5>
+          <h5><div className="event_details"><strong className="colorTitle">Time: </strong> {startTime}</div></h5>
+          <h5><div className="event_details"><strong className="colorTitle">Location: </strong>{location}</div></h5>
         </div>
-        <h4><div className="event_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div></h4>
-        <a href="#" className="btn btn-dark register">Register</a>
-      </div>
-    </main>
+        <h4><div className="event_description">{description}</div></h4>
+        <button type="submit" onClick={handleRegister} className="btn btn-dark register">Register</button>
+        </div>
+      </main>
     </div>
   );
 }
