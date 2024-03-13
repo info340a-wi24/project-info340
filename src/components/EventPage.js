@@ -17,7 +17,7 @@ export default function EventPage(props) {
     return <div>No event data!</div>;
   }
 
-  const { title, loc: location, description, startTime, image, alt } = eventData;
+  const { title, location, description, startTime, image, alt } = eventData;
 
 
 

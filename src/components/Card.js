@@ -74,7 +74,7 @@ function CardEvent(props) {
     //   navigate(`/Event/${eventId}`);
     // }
     function navigateToEventPage(eventData) {
-      navigate(`/EventPage/${eventData.id}`, { state: eventData });
+      navigate(`/EventPage/${eventData}`, { state: eventData });
     }
 
     // returns cards with event info

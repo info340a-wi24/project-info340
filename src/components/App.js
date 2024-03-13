@@ -75,7 +75,7 @@ export default function App(props) {
           <Route path="/CreateEvent" element={<Form />} />
           <Route path="/MyEvent" element={<MyEvents />} />
           <Route path="/Notifications" element={<Notifications />} />
-          <Route path="/Event/:eventId" element={<EventPage />} />
+          <Route path="/EventPage/:eventId" element={<EventPage />} />
       </Routes>
       <Footer />
     </div>
