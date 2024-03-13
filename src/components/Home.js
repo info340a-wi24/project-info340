@@ -35,13 +35,13 @@ export default function Home() {
 
 
   //fetch data from firebase
-  const [posts, setEvents] = useState([]); // State to store the fetched events
+  const [dataHome, setEvents] = useState([]); // State to store the fetched events
   const [loading, setLoading] = useState(true); // State to handle loading status
 
   useEffect(() => {
     // Initialize the database and reference
     const db = getDatabase();
-    const eventsRef = ref(db, 'posts');
+    const eventsRef = ref(db, 'dataHome');
 
     // Listen for data updates
     onValue(eventsRef, (snapshot) => {
@@ -74,7 +74,7 @@ export default function Home() {
       </header>
 
       <main>
-        <CardGrid data={posts} />
+        <CardGrid dataRef={'dataHome'} />
       </main>
     </div>
   );

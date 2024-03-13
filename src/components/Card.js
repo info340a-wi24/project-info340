@@ -60,7 +60,7 @@ export function CardGrid({dataRef}) {
 
 // Creates event cards
 function CardEvent(props) {
-    let info = props.data; 
+    let info = props.data;
     const time = new Date(info.startTime);
     let formattedDate = '';
     if (!isNaN(time.getTime())) {
@@ -70,8 +70,11 @@ function CardEvent(props) {
     info.date = formattedDate;
     const navigate = useNavigate();
 
-    function navigateToEventPage(eventId) {
-      navigate(`/Event/${eventId}`);
+    // function navigateToEventPage(eventId) {
+    //   navigate(`/Event/${eventId}`);
+    // }
+    function navigateToEventPage(eventData) {
+      navigate(`/EventPage/${eventData.id}`, { state: eventData });
     }
 
     // returns cards with event info

@@ -6,8 +6,20 @@ import MyEvents from './MyEvents';
 
 
 export default function EventPage(props) {
+  // const loc = useLocation();
+  // const {title, location, description, startTime, image, alt, date} = loc.state;
+
   const loc = useLocation();
-  const {title, location, description, startTime, image, alt, date} = loc.state;
+  const eventData = loc.state;
+
+  if (!eventData) {
+    // Handle the case where no event data was passed
+    return <div>No event data!</div>;
+  }
+
+  const { title, loc: location, description, startTime, image, alt } = eventData;
+
+
 
   // handle registration
   function handleRegister(e) {
@@ -42,7 +54,7 @@ export default function EventPage(props) {
       <main>
       <div className="event_info">
         <div className="Titles">
-          <h5><div className="event_details"><strong className="colorTitle">Time: </strong> {date}</div></h5>
+          <h5><div className="event_details"><strong className="colorTitle">Time: </strong> {startTime}</div></h5>
           <h5><div className="event_details"><strong className="colorTitle">Location: </strong>{location}</div></h5>
         </div>
         <h4><div className="event_description">{description}</div></h4>
