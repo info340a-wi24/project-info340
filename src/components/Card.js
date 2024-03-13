@@ -7,31 +7,14 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 // Code heavily inspired by Problem Set 8 'PetList.js'
 // ChatGPT helped debug this
 // Handles card display on page
-export function CardGrid(props) {
-  //const info = props.data || [];
-  /* const db = getDatabase();
-  const postsRef = ref(db, 'posts');
-  console.log(postsRef);
-
-  const postsSnap = onValue(postsRef, (snapshot) => {
-    const postsVal = snapshot.val();
-    return postsVal;
-  })
-  console.log(postsSnap);
-
-  const allPostsObj =  postsSnap;
-  console.log(allPostsObj);
-
-  const allPostsKeys = Object.keys(allPostsObj);
-  console.log(allPostsKeys); */
-
+export function CardGrid({dataRef}) {
   const [allPostsObj, setAllPostsObj] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const db = getDatabase();
-      const postsRef = ref(db, 'posts');
+      const postsRef = ref(db, dataRef);
 
       try {
         const snapshot = await onValue(postsRef, (snapshot) => {
@@ -48,20 +31,22 @@ export function CardGrid(props) {
     };
 
     fetchData();
-  }, []);
+  }, [dataRef]);
 
+  // loading screen to inform users
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="event-style mb-5 p-5">Loading...</div>;
   }
 
   const allPostsKeys = Object.keys(allPostsObj);
 
   let eventCards = allPostsKeys.map((key) => {
-    return <CardEvent id={key} key={key} data={allPostsObj[key]} />;
+    return <CardEvent id={key} key={key} data={allPostsObj[key]} refer={dataRef} />;
   })
 
+  // when there are no registered events
   if (allPostsKeys.length === 0) {
-    eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>
+    eventCards = <div className="event-style mb-5 p-5"><p>No registered events</p></div>;
   }
 
   return (
@@ -75,24 +60,28 @@ export function CardGrid(props) {
 
 // Creates event cards
 function CardEvent(props) {
-    let info = props.data;
-    const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy');
-    const newLink = info.image.slice(5);
-    let id = props.id;
-
+    let info = props.data; 
+    const time = new Date(info.startTime);
+    let formattedDate = '';
+    if (!isNaN(time.getTime())) {
+      formattedDate = format(time, 'MM/dd/yyyy');
+    }
+    //const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
+    info.date = formattedDate;
     const navigate = useNavigate();
 
     function navigateToEventPage(eventId) {
       navigate(`/Event/${eventId}`);
     }
 
+    // returns cards with event info
     return (
     <div className="col-md-6 col-xl-3 ">
       <Card className="card mb-2">
         <CardBody>
             <div className="row me-2">
                 <div className="event_img">
-                    <CardImg className="event1" src={new URL(newLink)} alt={info.alt} />
+                    <CardImg id="card-image" className="event1" src={info.image} alt={info.alt} />
                 </div>
 
                 <div className="col-sm">
@@ -100,8 +89,7 @@ function CardEvent(props) {
                     <CardSubtitle className="date">{formattedDate}</CardSubtitle>
                     <CardTitle className="card-title">{info.title}</CardTitle>
                     <CardText className="card-text">{info.description}</CardText>
-                    <button className="btn btn-dark" onClick={() => navigateToEventPage(id)}>Go to event</button>
-
+                    <button className="btn btn-dark" onClick={ () => navigateToEventPage(info)}>Go to event</button>
                 </div>
             </div>
         </CardBody>
