@@ -11,6 +11,7 @@ export function CardGrid({dataRef}) {
   const [allPostsObj, setAllPostsObj] = useState({});
   const [loading, setLoading] = useState(true);
 
+  // fetch data from database
   useEffect(() => {
     const fetchData = async () => {
       const db = getDatabase();
@@ -69,13 +70,13 @@ function CardEvent(props) {
     //const formattedDate = format(new Date(info.startTime), 'MM/dd/yyyy'); // inspired by day 19 demo, converts datepicker to human dates
     info.date = formattedDate;
 
+    // navigate to EventPage with event details
     const navigate = useNavigate();
-
     function navigateToEventPage() {
       navigate('/EventPage', { state: { ...info } });
     }
 
-    // returns cards with event info
+    // returns cards with event info for My Events
     return (
     <div className="col-md-6 col-xl-3 ">
       <Card className="card mb-2">

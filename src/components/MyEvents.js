@@ -12,7 +12,7 @@ export default function MyEvents() {
             </header>
 
             <h3 className="event-title">Registered Events</h3>
-            <CardGrid dataRef={'pmy-events'}/>
+            <CardGrid dataRef={'my-events'}/>
         </div>
     );
 }

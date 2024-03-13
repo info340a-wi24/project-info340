@@ -31,7 +31,7 @@ export default function EventPage(props) {
         .catch((error) => console.log('Error: ', error));
     }
     <MyEvents />
-};
+  };
 
   return(
     <div>
